@@ -1,4 +1,10 @@
+/**
+ * Sample Skeleton for 'home.fxml' Controller Class
+ */
+
 package com.mox.zenmoore.controller;
 
-public class Controller {
+public abstract class Controller {
+
+    abstract void initialize();
 }

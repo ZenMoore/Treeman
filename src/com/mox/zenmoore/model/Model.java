@@ -1,4 +1,4 @@
 package com.mox.zenmoore.model;
 
-public class Model {
+public abstract class Model {
 }
