@@ -10,10 +10,7 @@ import java.util.ResourceBundle;
 import com.mox.zenmoore.view.Feedback;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -145,7 +142,13 @@ public class Controller_home extends Controller{
 
     @FXML
     void showSearchResult(ActionEvent event) {
-        System.out.println("OK");
+        Alert alert=new Alert(Alert.AlertType.ERROR);
+
+        alert.setTitle("Alert");
+        alert.setHeaderText("HaHaHa...");
+        alert.setContentText("Sorry sir...This is truly a fake search box...");
+
+        alert.showAndWait();
     }
 
     @FXML
