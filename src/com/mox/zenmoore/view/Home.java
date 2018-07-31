@@ -24,7 +24,7 @@ public class Home extends Application{
             Scene scene=new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.setTitle("Treeman");
-            primaryStage.getIcons().add(new Image("file://image/groot.png"));
+//            primaryStage.getIcons().add(new Image("file://image/logo/logo.PNG"));
             primaryStage.setResizable(false);
             primaryStage.show();
         }catch (Exception ex){

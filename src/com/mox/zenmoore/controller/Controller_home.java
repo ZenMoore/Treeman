@@ -7,6 +7,7 @@ package com.mox.zenmoore.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.mox.zenmoore.view.Ad;
 import com.mox.zenmoore.view.Feedback;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -101,7 +102,7 @@ public class Controller_home extends Controller{
 
     @FXML
     void showAds(ActionEvent event) {
-
+        new Ad().start();
     }
 
     @FXML

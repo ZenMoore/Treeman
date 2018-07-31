@@ -56,5 +56,6 @@ public class Controller_feedback extends Controller{
         assert btn_send != null : "fx:id=\"btn_send\" was not injected: check your FXML file 'feedback.fxml'.";
         assert imageview != null : "fx:id=\"imageview\" was not injected: check your FXML file 'feedback.fxml'.";
 
+        htmltext.requestFocus();
     }
 }
