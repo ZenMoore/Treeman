@@ -22,7 +22,7 @@ public class RHRItem extends Model {
         this.calendar=calendar;
         this.priority=priority;
         this.filename=filename;
-        
+
         try{
             try(
                     ObjectOutputStream output=new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(Directories.rhrDirs+this.filename)));
