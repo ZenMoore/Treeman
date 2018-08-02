@@ -1,5 +1,9 @@
 package com.mox.zenmoore.model;
 
-public abstract class Model {
+import java.io.Serializable;
+
+public abstract class Model implements Serializable {
+    protected String filename;
+
     public abstract void refresh();
 }
