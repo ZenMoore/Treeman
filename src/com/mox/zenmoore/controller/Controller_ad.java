@@ -58,9 +58,9 @@ public class Controller_ad extends Controller{
     private TextArea textarea_ta; // Value injected by FXMLLoader
 
     //是找不到视频即视频地址错误的情况
-    public static final String errorMedia="file://media/error.mp4";
+    public static final String errorMedia="file:media/error.flv";
 
-    public static final String normalMedia="file://media/mediaAd.flv";
+    public static final String normalMedia="file:media/mediaAd.flv";
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
     @Override
@@ -77,12 +77,13 @@ public class Controller_ad extends Controller{
         assert pane_ta != null : "fx:id=\"pane_ta\" was not injected: check your FXML file 'ad.fxml'.";
         assert textarea_ta != null : "fx:id=\"textarea_ta\" was not injected: check your FXML file 'ad.fxml'.";
 
-//        try{
+        try{
             Media media=new Media(Controller_ad.normalMedia);
             MediaPlayer player=new MediaPlayer(media);
             mediaview.setMediaPlayer(player);
-//        }catch (Exception ex){
+        }catch (Exception ex){
 //            mediaview.setMediaPlayer(new MediaPlayer(new Media(Controller_ad.errorMedia)));
-//        }
+            ex.printStackTrace();
+        }
     }
 }

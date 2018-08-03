@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -24,7 +26,7 @@ public class Home extends Application{
             Scene scene=new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.setTitle("Treeman");
-//            primaryStage.getIcons().add(new Image("file://image/logo/logo.PNG"));
+            primaryStage.getIcons().add(new Image("file:image/logo/logo.PNG"));
             primaryStage.setResizable(false);
             primaryStage.show();
         }catch (Exception ex){
