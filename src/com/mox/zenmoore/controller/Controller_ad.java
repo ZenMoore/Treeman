@@ -4,6 +4,7 @@
 
 package com.mox.zenmoore.controller;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -58,9 +59,9 @@ public class Controller_ad extends Controller{
     private TextArea textarea_ta; // Value injected by FXMLLoader
 
     //是找不到视频即视频地址错误的情况
-    public static final String errorMedia="file:media/error.flv";
+    public static final String errorMedia=new File("media/error.mp4").toURI().toString();;
 
-    public static final String normalMedia="file:media/mediaAd.flv";
+    public static final String normalMedia=new File("media/mediaAd.mp4").toURI().toString();
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
     @Override
@@ -81,6 +82,16 @@ public class Controller_ad extends Controller{
             Media media=new Media(Controller_ad.normalMedia);
             MediaPlayer player=new MediaPlayer(media);
             mediaview.setMediaPlayer(player);
+
+            mediaview.setOnMouseClicked(e->{
+                if(player.getStatus()==MediaPlayer.Status.PLAYING){
+                    player.pause();
+                }else{
+                    player.play();
+                }
+            });
+
+            player.play();
         }catch (Exception ex){
 //            mediaview.setMediaPlayer(new MediaPlayer(new Media(Controller_ad.errorMedia)));
             ex.printStackTrace();

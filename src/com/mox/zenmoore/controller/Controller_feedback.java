@@ -7,12 +7,15 @@ package com.mox.zenmoore.controller;
 import java.net.URL;
 import java.util.Properties;
 import java.util.ResourceBundle;
+
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
 import javafx.scene.web.HTMLEditor;
 
 import javax.net.ssl.SSLSession;
@@ -56,6 +59,13 @@ public class Controller_feedback extends Controller{
         assert btn_send != null : "fx:id=\"btn_send\" was not injected: check your FXML file 'feedback.fxml'.";
         assert imageview != null : "fx:id=\"imageview\" was not injected: check your FXML file 'feedback.fxml'.";
 
-        htmltext.requestFocus();
+        btn_send.setOnMouseEntered(e->{
+            btn_send.setStyle("-fx-backgrond-color: #FFFAF0; -fx-border-color: #000000; -fx-border-radius: 5px;");
+        });
+
+        btn_send.setOnMouseExited(e->{
+            btn_send.setStyle("-fx-background-color: #FFFAFA; -fx-border-color: #000000; -fx-border-radius: 5px;");
+        });
+
     }
 }

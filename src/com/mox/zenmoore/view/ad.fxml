@@ -14,7 +14,7 @@
       <content>
         <AnchorPane fx:id="pane_ma" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFFAFA;">
                <children>
-                  <MediaView fx:id="mediaview" fitHeight="200.0" fitWidth="200.0" layoutX="200.0" layoutY="85.0" />
+                  <MediaView fx:id="mediaview" fitHeight="350.0" fitWidth="580.0" layoutX="10.0" layoutY="10.0" />
                </children></AnchorPane>
       </content>
     </Tab>

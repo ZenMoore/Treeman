@@ -11,7 +11,9 @@ public class RHRItem extends Model {
     private String content;
 
 //    private boolean isDeveloped;
-
+    /**
+     * 说的是什么时候养成一个 RHR
+     */
     private Calendar calendar;
 
     private int priority;

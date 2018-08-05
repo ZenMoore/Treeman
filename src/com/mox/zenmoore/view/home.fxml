@@ -21,7 +21,7 @@
             <Font name="Dotum" size="59.0" />
          </font>
       </Label>
-      <Button fx:id="btn_display" layoutX="433.0" layoutY="51.0" mnemonicParsing="false" onAction="#showDisplay" prefHeight="36.0" prefWidth="95.0" style="-fx-text-fill: black; -fx-border-color: black; -fx-background-color: #FFFAFA;" text="Display">
+      <Button fx:id="btn_display" layoutX="433.0" layoutY="51.0" mnemonicParsing="false" onAction="#showDisplay" prefHeight="36.0" prefWidth="95.0" style="-fx-text-fill: black; -fx-border-color: black; -fx-background-color: #FFFAFA; -fx-border-radius: 5px;" text="Display">
          <font>
             <Font name="FZYaoTi" size="18.0" />
          </font>
@@ -134,20 +134,20 @@
       </ImageView>
       <ToolBar layoutX="605.0" layoutY="555.0" prefHeight="52.0" prefWidth="462.0" style="-fx-background-color: #FFFAFA;">
         <items>
-          <Button fx:id="btn_setting" mnemonicParsing="false" onAction="#showSetting" prefHeight="36.0" prefWidth="109.0" style="-fx-background-color: #FFFAFA; -fx-border-color: black; -fx-text-fill: black;" text="设置">
+          <Button fx:id="btn_setting" mnemonicParsing="false" onAction="#showSetting" prefHeight="36.0" prefWidth="109.0" style="-fx-background-color: #FFFAFA; -fx-border-color: black; -fx-text-fill: black; -fx-border-radius: 5px;" text="设置">
                <font>
                   <Font name="Dotum" size="23.0" />
                </font>
             </Button>
-            <Button fx:id="btn_direction" mnemonicParsing="false" onAction="#showDirections" prefHeight="36.0" prefWidth="103.0" style="-fx-background-color: #FFFAFA; -fx-border-color: black; -fx-text-fill: black;" text="说明">
+            <Button fx:id="btn_direction" mnemonicParsing="false" onAction="#showDirections" prefHeight="36.0" prefWidth="103.0" style="-fx-background-color: #FFFAFA; -fx-border-color: black; -fx-text-fill: black; -fx-border-radius: 5px;" text="说明">
                <font>
                   <Font name="Dotum" size="23.0" />
                </font></Button>
-            <Button fx:id="btn_advertisement" mnemonicParsing="false" onAction="#showAds" prefHeight="36.0" prefWidth="103.0" style="-fx-background-color: #FFFAFA; -fx-border-color: black; -fx-text-fill: black;" text="广告">
+            <Button fx:id="btn_advertisement" mnemonicParsing="false" onAction="#showAds" prefHeight="36.0" prefWidth="103.0" style="-fx-background-color: #FFFAFA; -fx-border-color: black; -fx-text-fill: black; -fx-border-radius: 5px;" text="广告">
                <font>
                   <Font name="Dotum" size="23.0" />
                </font></Button>
-            <Button fx:id="btn_feedback" mnemonicParsing="false" onAction="#showFeedback" prefHeight="36.0" prefWidth="103.0" style="-fx-background-color: #FFFAFA; -fx-border-color: black; -fx-text-fill: black;" text="反馈">
+            <Button fx:id="btn_feedback" mnemonicParsing="false" onAction="#showFeedback" prefHeight="36.0" prefWidth="103.0" style="-fx-background-color: #FFFAFA; -fx-border-color: black; -fx-text-fill: black; -fx-border-radius: 5px;" text="反馈">
                <font>
                   <Font name="Dotum" size="23.0" />
                </font></Button>

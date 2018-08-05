@@ -15,7 +15,7 @@
             <Blend />
          </effect>
       </HTMLEditor>
-      <Button fx:id="btn_send" layoutX="606.0" layoutY="371.0" mnemonicParsing="false" onAction="#sendFeedback" style="-fx-background-color: #FFFAFA; -fx-border-color: #000000;" text="Send">
+      <Button fx:id="btn_send" layoutX="576.0" layoutY="371.0" mnemonicParsing="false" onAction="#sendFeedback" prefHeight="34.0" prefWidth="83.0" style="-fx-background-color: #FFFAFA; -fx-border-color: #000000; -fx-border-radius: 5px;" text="Send">
          <font>
             <Font name="LiSu" size="19.0" />
          </font></Button>
