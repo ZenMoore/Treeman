@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 
 import com.mox.zenmoore.view.Ad;
 import com.mox.zenmoore.view.Feedback;
+import com.mox.zenmoore.view.RHR;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -138,7 +139,7 @@ public class Controller_home extends Controller{
 
     @FXML
     void showRHRs(MouseEvent event) {
-
+        new RHR().start();
     }
 
     @FXML

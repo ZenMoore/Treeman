@@ -6,6 +6,8 @@ package com.mox.zenmoore.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.mox.zenmoore.view.dialogue.AddRhR;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
@@ -35,7 +37,7 @@ public class Controller_rhr extends Controller{
 
     @FXML
     void showAddDialog(MouseEvent event) {
-
+        new AddRhR().start();
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
@@ -46,5 +48,27 @@ public class Controller_rhr extends Controller{
         assert srp_rhr != null : "fx:id=\"srp_rhr\" was not injected: check your FXML file 'rhr.fxml'.";
         assert addRhR != null : "fx:id=\"addRhR\" was not injected: check your FXML file 'rhr.fxml'.";
 
+        addRhR.setOnMouseEntered(e->{
+            addRhR.setStyle("-fx-background-color: #87CEFA; -fx-border-radius: 5px;");
+        });
+
+        addRhR.setOnMouseExited(e->{
+            addRhR.setStyle("-fx-background-color: #FFEBCD; -fx-border-radius: 5px;");
+        });
+
+        addRhR.setOnMousePressed(e->{
+            addRhR.setStyle("-fx-background-color: #FFEBCD; -fx-border-radius: 5px;");
+        });
+
+        addRhR.setOnMouseReleased(e->{
+            addRhR.setStyle("-fx-background-color: #87CEFA; -fx-border-radius: 5px;");
+        });
+
+        loadItems();
+
+    }
+
+    void loadItems(){
+        System.out.println("Loaded.");
     }
 }

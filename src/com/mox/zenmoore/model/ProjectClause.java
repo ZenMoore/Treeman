@@ -5,7 +5,7 @@ public class ProjectClause extends Model{
 
 
     @Override
-    public void refresh(){
+    public void delete(){
 
     }
 }

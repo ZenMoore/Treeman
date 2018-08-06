@@ -72,7 +72,7 @@ public class RHRItem extends Model {
      * The former exists.I/O
      */
     @Override
-    public void refresh(){
+    public void delete(){
         new File(Directories.rhrDirs+filename).delete();
     }
 }

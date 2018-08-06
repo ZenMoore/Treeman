@@ -26,7 +26,7 @@ public class Task extends Model{
     }
 
     @Override
-    public void refresh(){
+    public void delete(){
         new File(Directories.taskDirs+filename).delete();
     }
 
