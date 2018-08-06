@@ -4,16 +4,23 @@
 
 package com.mox.zenmoore.controller;
 
+import java.io.File;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import com.mox.zenmoore.view.dialogue.AddRhR;
+import com.mox.zenmoore.model.Directories;
+import com.mox.zenmoore.model.RHRItem;
+import com.mox.zenmoore.view.right.RhR_plus.AddRhR;
+import com.mox.zenmoore.view.right.RhR_plus.RHRadioButton;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 public class Controller_rhr extends Controller{
 
@@ -41,7 +48,7 @@ public class Controller_rhr extends Controller{
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
-
+    @Override
     void initialize() {
         assert pane != null : "fx:id=\"pane\" was not injected: check your FXML file 'rhr.fxml'.";
         assert motionImage != null : "fx:id=\"motionImage\" was not injected: check your FXML file 'rhr.fxml'.";
@@ -64,11 +71,34 @@ public class Controller_rhr extends Controller{
             addRhR.setStyle("-fx-background-color: #87CEFA; -fx-border-radius: 5px;");
         });
 
+        srp_rhr.setPannable(true);
+        srp_rhr.setHbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        srp_rhr.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+
         loadItems();
 
     }
 
     void loadItems(){
-        System.out.println("Loaded.");
+
+        File dir=new File(Directories.rhrDirs);
+        if(!dir.exists()){
+            dir.mkdirs();
+        }
+
+        File[] files=new File(Directories.rhrDirs).listFiles();
+
+        for(File file : files){
+            RHRadioButton radioButton=new RHRadioButton(new RHRItem(file));
+            srp_rhr.setContent(radioButton);
+        }
+    }
+
+    /**
+     * 另有在 Controller_addrhr 中获取 this Stage 的目的。
+     * @return
+     */
+    public Pane getPane(){
+        return pane;
     }
 }

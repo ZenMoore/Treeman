@@ -1,4 +1,4 @@
-package com.mox.zenmoore.view.dialogue;
+package com.mox.zenmoore.view.right.RhR_plus;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

@@ -24,7 +24,7 @@
                <children>
                   <ImageView fx:id="imageview" fitHeight="366.0" fitWidth="295.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@FXMLImage/ad.PNG" />
+                        <Image url="@../FXMLImage/ad.PNG" />
                      </image></ImageView>
                   <TextArea fx:id="textarea_pa" disable="true" editable="false" layoutX="300.0" layoutY="10.0" prefHeight="349.0" prefWidth="271.0" style="-fx-background-color: #FFFAFA;" text="I/O 文本" />
                </children></AnchorPane>

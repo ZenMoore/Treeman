@@ -10,11 +10,15 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
 import com.mox.zenmoore.model.RHRItem;
+import com.mox.zenmoore.view.right.RHR;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 import javafx.util.Callback;
 
 public class Controller_addrhr extends Controller{
@@ -90,6 +94,15 @@ public class Controller_addrhr extends Controller{
             calendar.set(Integer.parseInt(infors[0]),Integer.parseInt(infors[1]),Integer.parseInt(infors[2]));
             new RHRItem(text_1.getText(),calendar,priority,text_2.getText());
         }
+
+        clear();
+    }
+
+    void clear(){
+        text_1.setText("");
+        text_2.setText("");
+        group.getSelectedToggle().setSelected(false);
+        datepicker.setValue(LocalDate.now().plusDays(21));
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete

@@ -1,25 +1,25 @@
-package com.mox.zenmoore.view;
+package com.mox.zenmoore.view.tool;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class RHR extends Stage {
+public class Ad extends Stage {
 
     public void start(){
         try{
-            Parent root=FXMLLoader.load(getClass().getResource("rhr.fxml"));
+            Parent root=FXMLLoader.load(getClass().getResource("ad.fxml"));
 
             Scene scene=new Scene(root);
 
             this.setScene(scene);
-            this.setTitle("RHR");
+            this.setTitle("Ad");
             this.setResizable(false);
             this.show();
         }catch (Exception ex){
             System.out.println(ex.getMessage());
         }
-    }
 
+    }
 }

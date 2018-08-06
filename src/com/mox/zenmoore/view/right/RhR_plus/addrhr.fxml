@@ -19,7 +19,7 @@
       <TextField fx:id="text_2" layoutX="72.0" layoutY="194.0" prefHeight="25.0" prefWidth="248.0" promptText="We need this name to name the file." />
       <ImageView fx:id="image" fitHeight="72.0" fitWidth="304.0" layoutX="15.0" layoutY="6.0" pickOnBounds="true">
          <image>
-            <Image url="@addrhr.jpg" />
+            <Image url="@../../FXMLImage/addrhr.jpg" />
          </image>
       </ImageView>
       <Button fx:id="button" layoutX="249.0" layoutY="231.0" mnemonicParsing="false" onAction="#add" style="-fx-background-color: #FFFAF0; -fx-border-color: #FFF5EE; -fx-border-radius: 5px;" text="Add" />

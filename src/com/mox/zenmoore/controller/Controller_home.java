@@ -7,9 +7,9 @@ package com.mox.zenmoore.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.mox.zenmoore.view.Ad;
-import com.mox.zenmoore.view.Feedback;
-import com.mox.zenmoore.view.RHR;
+import com.mox.zenmoore.view.tool.Ad;
+import com.mox.zenmoore.view.tool.Feedback;
+import com.mox.zenmoore.view.right.RHR;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

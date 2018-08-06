@@ -21,7 +21,7 @@
          </font></Button>
       <ImageView fx:id="imageview" fitHeight="65.0" fitWidth="483.0" layoutX="14.0" layoutY="355.0" pickOnBounds="true">
          <image>
-            <Image url="@FXMLImage/feedbacktext.jpg" />
+            <Image url="@../FXMLImage/feedbacktext.jpg" />
          </image>
       </ImageView>
    </children>

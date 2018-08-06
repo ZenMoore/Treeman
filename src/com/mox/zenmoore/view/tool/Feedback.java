@@ -1,4 +1,4 @@
-package com.mox.zenmoore.view;
+package com.mox.zenmoore.view.tool;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
