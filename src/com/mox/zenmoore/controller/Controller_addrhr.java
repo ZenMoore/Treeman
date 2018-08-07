@@ -4,12 +4,17 @@
 
 package com.mox.zenmoore.controller;
 
+import java.io.File;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
+
+import com.mox.zenmoore.model.Directories;
 import com.mox.zenmoore.model.RHRItem;
+import com.mox.zenmoore.model.Suffixs;
 import com.mox.zenmoore.view.right.RHR;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -85,26 +90,29 @@ public class Controller_addrhr extends Controller{
             new Alert(Alert.AlertType.WARNING,"Content cannot be null.").showAndWait();
         }else if(text_2.getText().equals("")){
             new Alert(Alert.AlertType.WARNING,"Filename cannot be null.").showAndWait();
-        }else {
-            if(priority==0){
-                new Alert(Alert.AlertType.ERROR,"Priority is not set.").showAndWait();
+        }else if(priority==0){
+            new Alert(Alert.AlertType.ERROR,"Priority is not set.").showAndWait();
+        }else{
+            ArrayList<String> nameList = new ArrayList<>();
+            File[] files = new File(Directories.rhrDirs).listFiles();
+            for(File temp : files){
+                nameList.add(temp.getName());
             }
-            Calendar calendar=new GregorianCalendar();
-            String[] infors=datepicker.getEditor().getText().split("/");
-            calendar.set(Integer.parseInt(infors[0]),Integer.parseInt(infors[1]),Integer.parseInt(infors[2]));
-            new RHRItem(text_1.getText(),calendar,priority,text_2.getText());
+
+            if(nameList.contains((text_2.getText()+Suffixs.rhrfix))){
+                new Alert(Alert.AlertType.ERROR,"The name already exists.").showAndWait();
+                text_2.setText("");
+                return;
+            }else {
+                Calendar calendar=new GregorianCalendar();
+                String[] infors=datepicker.getEditor().getText().split("/");
+                calendar.set(Integer.parseInt(infors[0]),Integer.parseInt(infors[1]),Integer.parseInt(infors[2]));
+                new RHRItem(text_1.getText(),calendar,priority,text_2.getText());
+            }
+
         }
 
         clear();
-    }
-
-    void clear(){
-        text_1.setText("");
-        text_2.setText("");
-        if(group.getSelectedToggle()!=null){
-            group.getSelectedToggle().setSelected(false);
-        }
-        datepicker.setValue(LocalDate.now().plusDays(21));
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
@@ -183,5 +191,14 @@ public class Controller_addrhr extends Controller{
 
         datepicker.setDayCellFactory(dayCellFactory);
 
+    }
+
+    void clear(){
+        text_1.setText("");
+        text_2.setText("");
+        if(group.getSelectedToggle()!=null){
+            group.getSelectedToggle().setSelected(false);
+        }
+        datepicker.setValue(LocalDate.now().plusDays(21));
     }
 }

@@ -158,20 +158,6 @@ public class Controller_home extends Controller{
 
     }
 
-    private void setButtonStyle(Button... buttons){
-
-        for(Button temp: buttons){
-            temp.setOnMouseEntered(e->{
-                temp.setStyle("-fx-backgrond-color: #FFFAF0; -fx-border-color: #000000; -fx-border-radius: 5px;");
-            });
-
-            temp.setOnMouseExited(e->{
-                temp.setStyle("-fx-background-color: #FFFAFA; -fx-border-color: #000000; -fx-border-radius: 5px;");
-            });
-        }
-
-    }
-
     @FXML // This method is called by the FXMLLoader when initialization is complete
     @Override
     void initialize() {
@@ -199,5 +185,19 @@ public class Controller_home extends Controller{
         assert btn_feedback != null : "fx:id=\"btn_feedback\" was not injected: check your FXML file 'home.fxml'.";
 
         setButtonStyle(btn_advertisement,btn_direction,btn_display,btn_feedback,btn_setting);
+    }
+
+    private void setButtonStyle(Button... buttons){
+
+        for(Button temp: buttons){
+            temp.setOnMouseEntered(e->{
+                temp.setStyle("-fx-backgrond-color: #FFFAF0; -fx-border-color: #000000; -fx-border-radius: 5px;");
+            });
+
+            temp.setOnMouseExited(e->{
+                temp.setStyle("-fx-background-color: #FFFAFA; -fx-border-color: #000000; -fx-border-radius: 5px;");
+            });
+        }
+
     }
 }

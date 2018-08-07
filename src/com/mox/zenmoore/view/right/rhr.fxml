@@ -7,17 +7,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" prefHeight="508.0" prefWidth="448.0" style="-fx-background-color: #FFFAFA;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mox.zenmoore.controller.Controller_rhr">
+<AnchorPane fx:id="pane" prefHeight="508.0" prefWidth="448.0" style="-fx-background-color: #F5F5F5;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mox.zenmoore.controller.Controller_rhr">
    <children>
-      <ImageView fx:id="motionImage" fitHeight="55.0" fitWidth="384.0" layoutX="9.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="motionImage" fitHeight="28.0" fitWidth="350.0" layoutX="9.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../FXMLImage/rhr_motion.jpg" />
          </image>
       </ImageView>
-      <ScrollPane fx:id="srp_rhr" layoutX="9.0" layoutY="53.0" prefHeight="441.0" prefWidth="427.0" style="-fx-background-color: #FFFAFA;" />
-      <Button fx:id="addRhR" centerShape="false" contentDisplay="TEXT_ONLY" graphicTextGap="0.0" layoutX="402.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#showAddDialog" prefHeight="30.0" prefWidth="32.0" style="-fx-background-color: #FFEBCD; -fx-border-radius: 5px;" text="十" textAlignment="CENTER" textOverrun="CLIP">
+      <ScrollPane fx:id="srp_rhr" layoutX="9.0" layoutY="53.0" prefHeight="441.0" prefWidth="427.0" style="-fx-background-color: #F5F5F5; " />
+      <Button fx:id="addRhR" centerShape="false" contentDisplay="TEXT_ONLY" graphicTextGap="0.0" layoutX="365.0" layoutY="14.0" mnemonicParsing="false" onAction="#showAddDialog" prefHeight="27.0" prefWidth="23.0" style="-fx-background-color: #FFEBCD; -fx-border-radius: 5px;" text="十" textAlignment="CENTER" textOverrun="CLIP">
          <font>
-            <Font name="Engravers MT" size="12.0" />
+            <Font name="Engravers MT" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="refresh" centerShape="false" contentDisplay="TEXT_ONLY" graphicTextGap="0.0" layoutX="401.0" layoutY="14.0" mnemonicParsing="false" onAction="#refresh" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: #FFEBCD; -fx-border-radius: 5px;" text="⇵" textAlignment="CENTER" textOverrun="CLIP">
+         <font>
+            <Font name="Engravers MT" size="15.0" />
          </font>
       </Button>
    </children>
