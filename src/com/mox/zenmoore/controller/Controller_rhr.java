@@ -14,12 +14,15 @@ import com.mox.zenmoore.model.RHRItem;
 import com.mox.zenmoore.view.right.RhR_plus.AddRhR;
 import com.mox.zenmoore.view.right.RhR_plus.RHRadioButton;
 import javafx.fxml.FXML;
+import javafx.geometry.Orientation;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Controller_rhr extends Controller{
@@ -72,8 +75,8 @@ public class Controller_rhr extends Controller{
         });
 
         srp_rhr.setPannable(true);
-        srp_rhr.setHbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
-        srp_rhr.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        srp_rhr.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        srp_rhr.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
 
         loadItems();
 
@@ -87,11 +90,14 @@ public class Controller_rhr extends Controller{
         }
 
         File[] files=new File(Directories.rhrDirs).listFiles();
-
+        FlowPane pane = new FlowPane(Orientation.VERTICAL);
         for(File file : files){
             RHRadioButton radioButton=new RHRadioButton(new RHRItem(file));
-            srp_rhr.setContent(radioButton);
+            pane.getChildren().add(radioButton);
         }
+
+        srp_rhr.setContent(pane);
+
     }
 
     /**

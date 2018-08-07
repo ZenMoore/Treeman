@@ -101,7 +101,9 @@ public class Controller_addrhr extends Controller{
     void clear(){
         text_1.setText("");
         text_2.setText("");
-        group.getSelectedToggle().setSelected(false);
+        if(group.getSelectedToggle()!=null){
+            group.getSelectedToggle().setSelected(false);
+        }
         datepicker.setValue(LocalDate.now().plusDays(21));
     }
 
