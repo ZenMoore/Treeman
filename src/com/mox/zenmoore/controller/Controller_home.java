@@ -9,6 +9,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import com.mox.zenmoore.model.Directories;
 import com.mox.zenmoore.model.Task;
+import com.mox.zenmoore.view.Home;
 import com.mox.zenmoore.view.left.TodRadioButton;
 import com.mox.zenmoore.view.tool.Ad;
 import com.mox.zenmoore.view.tool.Feedback;
@@ -21,6 +22,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import com.mox.zenmoore.view.left.addTod;
+import javafx.stage.Stage;
 
 public class Controller_home extends Controller{
 
@@ -68,6 +70,9 @@ public class Controller_home extends Controller{
 
     @FXML
     private ScrollPane srp_tod;
+
+    @FXML
+    private Button spring;
 
     @FXML
     void setToday(MouseEvent event){
@@ -131,6 +136,14 @@ public class Controller_home extends Controller{
 
     }
 
+    @FXML
+    void spring(ActionEvent event){
+        Button button = (Button) event.getSource();
+        Stage stage = (Stage) button.getScene().getWindow();
+        Home.spring(stage,button.getText().equals(">>"));
+        button.setText(button.getText().equals(">>") ? "<<" : ">>");
+    }
+
     @FXML // This method is called by the FXMLLoader when initialization is complete
     @Override
     void initialize() {
@@ -146,9 +159,12 @@ public class Controller_home extends Controller{
         assert btn_direction != null : "fx:id=\"btn_direction\" was not injected: check your FXML file 'home.fxml'.";
         assert btn_advertisement != null : "fx:id=\"btn_advertisement\" was not injected: check your FXML file 'home.fxml'.";
         assert btn_feedback != null : "fx:id=\"btn_feedback\" was not injected: check your FXML file 'home.fxml'.";
+        assert srp_tod != null : "fx:id=\"srp_tod\" was not injected: check your FXML file 'home.fxml'.";
+        assert spring != null : "fx:id=\"spring\" was not injected: check your FXML file 'home.fxml'.";
 
         setButtonStyle(btn_advertisement,btn_direction,btn_display,btn_feedback,btn_setting);
         loadTodays();
+        srb.setFocusTraversable(false);
     }
 
     private void setButtonStyle(Button... buttons){
