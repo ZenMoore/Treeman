@@ -4,4 +4,5 @@ public interface Suffixs {
     String notionfix=".not";
     String projectfix=".pro";
     String rhrfix=".rhr";
+    String taskfix=".tas";
 }

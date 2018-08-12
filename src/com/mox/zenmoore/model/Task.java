@@ -1,33 +1,52 @@
 package com.mox.zenmoore.model;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
+import javafx.scene.control.Alert;
 
-public class Task extends Model{
+import java.io.*;
 
-//    private boolean isFinished;
-    private String content;
+public class Task extends Item{
 
-    public Task(String filename,String content){
+    public Task(String filename,String content,int priority){
+            this.setContent(content);
+            this.setFilename(filename);
+            this.setPriority(priority);
+            this.autoSetFile();
+    }
+
+    public Task(File file){
+        this.setFile(file);
+
         try{
-//            this.isFinished=false;
-            this.content=content;
-            this.filename=filename;
             try(
-                    ObjectOutputStream output=new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(Directories.taskDirs+this.filename)));
+                    ObjectInputStream inputStream=new ObjectInputStream(new BufferedInputStream(new FileInputStream(this.getFile())))
             ){
-                output.writeObject(this);
+                Task item = (Task) inputStream.readObject();
+                this.setFilename(item.getFilename());
+                this.setContent(item.getContent());
+                this.setPriority(item.getPriority());
             }
         }catch (Exception ex){
-            System.out.println(ex.getMessage());
+            new Alert(Alert.AlertType.ERROR,ex.getMessage()).showAndWait();
         }
     }
 
     @Override
-    public void delete(){
-        new File(Directories.taskDirs+filename).delete();
+    public void autoSetFile(){
+        try{
+            File dir=new File(Directories.taskDirs);
+            if(!dir.exists()){
+                dir.mkdirs();
+            }
+
+            try(
+                    ObjectOutputStream output=new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(Directories.taskDirs+this.getFilename()+Suffixs.taskfix)));
+            ){
+                output.writeObject(this);
+                this.setFile(new File(Directories.taskDirs+this.getFilename()+Suffixs.taskfix));
+            }
+        }catch (Exception ex){
+            new Alert(Alert.AlertType.ERROR,"IOException.").showAndWait();
+        }
     }
 
 }

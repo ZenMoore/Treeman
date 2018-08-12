@@ -4,9 +4,12 @@
 
 package com.mox.zenmoore.controller;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+import com.mox.zenmoore.model.Directories;
+import com.mox.zenmoore.model.Task;
+import com.mox.zenmoore.view.left.TodRadioButton;
 import com.mox.zenmoore.view.tool.Ad;
 import com.mox.zenmoore.view.tool.Feedback;
 import com.mox.zenmoore.view.right.RHR;
@@ -16,6 +19,8 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import com.mox.zenmoore.view.left.addTod;
 
 public class Controller_home extends Controller{
 
@@ -33,36 +38,6 @@ public class Controller_home extends Controller{
 
     @FXML // fx:id="btn_display"
     private Button btn_display; // Value injected by FXMLLoader
-
-    @FXML // fx:id="task_01"
-    private CheckBox task_01; // Value injected by FXMLLoader
-
-    @FXML // fx:id="task_02"
-    private CheckBox task_02; // Value injected by FXMLLoader
-
-    @FXML // fx:id="task_03"
-    private CheckBox task_03; // Value injected by FXMLLoader
-
-    @FXML // fx:id="task_04"
-    private CheckBox task_04; // Value injected by FXMLLoader
-
-    @FXML // fx:id="task_05"
-    private CheckBox task_05; // Value injected by FXMLLoader
-
-    @FXML // fx:id="task_06"
-    private CheckBox task_06; // Value injected by FXMLLoader
-
-    @FXML // fx:id="task_07"
-    private CheckBox task_07; // Value injected by FXMLLoader
-
-    @FXML // fx:id="task_08"
-    private CheckBox task_08; // Value injected by FXMLLoader
-
-    @FXML // fx:id="task_09"
-    private CheckBox task_09; // Value injected by FXMLLoader
-
-    @FXML // fx:id="task_10"
-    private CheckBox task_10; // Value injected by FXMLLoader
 
     @FXML // fx:id="srb"
     private ComboBox<?> srb; // Value injected by FXMLLoader
@@ -92,9 +67,7 @@ public class Controller_home extends Controller{
     private Button btn_feedback; // Value injected by FXMLLoader
 
     @FXML
-    void deleteTask(ActionEvent event){
-        ((CheckBox)event.getSource()).setText("Congratulations and Come-on.");
-    }
+    private ScrollPane srp_tod;
 
     @FXML
     void setToday(MouseEvent event){
@@ -164,16 +137,6 @@ public class Controller_home extends Controller{
         assert homePane != null : "fx:id=\"homePane\" was not injected: check your FXML file 'home.fxml'.";
         assert homelabel != null : "fx:id=\"homelabel\" was not injected: check your FXML file 'home.fxml'.";
         assert btn_display != null : "fx:id=\"btn_display\" was not injected: check your FXML file 'home.fxml'.";
-        assert task_01 != null : "fx:id=\"task_01\" was not injected: check your FXML file 'home.fxml'.";
-        assert task_02 != null : "fx:id=\"task_02\" was not injected: check your FXML file 'home.fxml'.";
-        assert task_03 != null : "fx:id=\"task_03\" was not injected: check your FXML file 'home.fxml'.";
-        assert task_04 != null : "fx:id=\"task_04\" was not injected: check your FXML file 'home.fxml'.";
-        assert task_05 != null : "fx:id=\"task_05\" was not injected: check your FXML file 'home.fxml'.";
-        assert task_06 != null : "fx:id=\"task_06\" was not injected: check your FXML file 'home.fxml'.";
-        assert task_07 != null : "fx:id=\"task_07\" was not injected: check your FXML file 'home.fxml'.";
-        assert task_08 != null : "fx:id=\"task_08\" was not injected: check your FXML file 'home.fxml'.";
-        assert task_09 != null : "fx:id=\"task_09\" was not injected: check your FXML file 'home.fxml'.";
-        assert task_10 != null : "fx:id=\"task_10\" was not injected: check your FXML file 'home.fxml'.";
         assert srb != null : "fx:id=\"srb\" was not injected: check your FXML file 'home.fxml'.";
         assert notionImage != null : "fx:id=\"notionImage\" was not injected: check your FXML file 'home.fxml'.";
         assert projectImage != null : "fx:id=\"projectImage\" was not injected: check your FXML file 'home.fxml'.";
@@ -185,6 +148,7 @@ public class Controller_home extends Controller{
         assert btn_feedback != null : "fx:id=\"btn_feedback\" was not injected: check your FXML file 'home.fxml'.";
 
         setButtonStyle(btn_advertisement,btn_direction,btn_display,btn_feedback,btn_setting);
+        loadTodays();
     }
 
     private void setButtonStyle(Button... buttons){
@@ -199,5 +163,77 @@ public class Controller_home extends Controller{
             });
         }
 
+    }
+
+    private void loadTodays(){
+
+        File dir=new File(Directories.taskDirs);
+        if(!dir.exists()){
+            dir.mkdirs();
+        }
+
+        File[] files=new File(Directories.taskDirs).listFiles();
+        VBox group = new VBox();
+        group.setSpacing(10);
+        group.setStyle("-fx-background-color: #F5F5F5;");
+
+        ToolBar toolBar = new ToolBar(buttonAdd(),buttonFresh());
+        toolBar.setStyle("-fx-background-color: #F5F5F5;");
+        group.getChildren().add(toolBar);
+
+        for(File file : files){
+            TodRadioButton todRadioButton = new TodRadioButton(new Task(file));
+            group.getChildren().add(todRadioButton);
+        }
+
+        srp_tod.setContent(group);
+    }
+
+    private Button buttonAdd(){
+        Button button = new Button("+...");
+        button.setStyle("-fx-background-color: #F7F7F7;");
+        button.setOnAction(e->{
+            new addTod().start();
+        });
+        button.setOnMouseEntered(e->{
+            button.setStyle("-fx-background-color: #F5F5DC; -fx-border-radius: 5px;");
+        });
+
+        button.setOnMouseExited(e->{
+            button.setStyle("-fx-background-color: #F7F7F7; -fx-border-radius: 5px;");
+        });
+
+        button.setOnMousePressed(e->{
+            button.setStyle("-fx-background-color: #F5F5DC; -fx-border-radius: 5px;");
+        });
+
+        button.setOnMouseReleased(e->{
+            button.setStyle("-fx-background-color: #F7F7F7; -fx-border-radius: 5px;");
+        });
+
+        return button;
+    }
+
+    private Button buttonFresh(){
+        Button button = new Button("⇵");
+        button.setStyle("-fx-background-color: #F7F7F7;");
+        button.setOnAction(e->{
+            loadTodays();
+        });
+        button.setOnMouseEntered(e->{
+            button.setStyle("-fx-background-color: #F5F5DC; -fx-border-radius: 5px;");
+        });
+        button.setOnMouseExited(e->{
+            button.setStyle("-fx-background-color: #F7F7F7; -fx-border-radius: 5px;");
+        });
+
+        button.setOnMousePressed(e->{
+            button.setStyle("-fx-background-color: #F5F5DC; -fx-border-radius: 5px;");
+        });
+
+        button.setOnMouseReleased(e->{
+            button.setStyle("-fx-background-color: #F7F7F7; -fx-border-radius: 5px;");
+        });
+        return button;
     }
 }

@@ -5,9 +5,7 @@ import javafx.scene.control.Alert;
 import java.io.*;
 import java.util.Calendar;
 
-public class RHRItem extends Model {
-
-    private String content;
+public class RHRItem extends Item {
 
 //    private boolean isDeveloped;
     /**
@@ -15,45 +13,25 @@ public class RHRItem extends Model {
      */
     private Calendar calendar;
 
-    private int priority;
-
-    private transient File rhrFile;
-
     public RHRItem(String content,Calendar calendar,int priority,String filename){
-        this.content=content;
-//        this.isDeveloped=false;
-        this.calendar=calendar;
-        this.priority=priority;
-        this.filename=filename;
-
-        File dir=new File(Directories.rhrDirs);
-        if(!dir.exists()){
-            dir.mkdirs();
-        }
-
-        try{
-            try(
-                    ObjectOutputStream output=new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(Directories.rhrDirs+this.filename+Suffixs.rhrfix)))
-            ){
-                output.writeObject(this);
-                this.rhrFile=new File(Directories.rhrDirs+this.filename+Suffixs.rhrfix);
-            }
-        }catch (Exception ex){
-            System.out.println(ex.getMessage());
-        }
+        this.setContent(content);
+        this.setCalendar(calendar);
+        this.setPriority(priority);
+        this.setFilename(filename);
+        this.autoSetFile();
     }
 
-    public RHRItem(File rhrFile){
-        this.rhrFile=rhrFile;
+    public RHRItem(File file){
+        this.setFile(file);
 
        try{
            try(
-                   ObjectInputStream inputStream=new ObjectInputStream(new BufferedInputStream(new FileInputStream(this.rhrFile)))
+                   ObjectInputStream inputStream=new ObjectInputStream(new BufferedInputStream(new FileInputStream(this.getFile())))
            ){
                 RHRItem item = (RHRItem) inputStream.readObject();
-                this. filename= item.filename;
-                this.content=item.getContent();
-                this.priority = item.getPriority();
+                this.setFilename(item.getFilename());
+                this.setContent(item.getContent());
+                this.setPriority(item.getPriority());
                 this.calendar = item.getCalendar();
            }
        }catch (Exception ex){
@@ -61,43 +39,30 @@ public class RHRItem extends Model {
        }
     }
 
-    public String getContent() {
-        return content;
-    }
-
-//    public boolean isDeveloped() {
-//        return isDeveloped;
-//    }
-
     public Calendar getCalendar() {
         return calendar;
     }
-
-    public int getPriority() {
-        return priority;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-//    public void setDeveloped(boolean developed) {
-//        isDeveloped = developed;
-//    }
 
     public void setCalendar(Calendar calendar) {
         this.calendar = calendar;
     }
 
-    public void setPriority(int priority) {
-        this.priority = priority;
-    }
-
-    /**
-     * The former exists.I/O
-     */
     @Override
-    public void delete(){
-        this.rhrFile.delete();
+    public void autoSetFile(){
+        File dir=new File(Directories.rhrDirs);
+        if(!dir.exists()){
+            dir.mkdirs();
+        }
+
+        try{
+            try(
+                    ObjectOutputStream output=new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(Directories.rhrDirs+this.getFilename()+Suffixs.rhrfix)))
+            ){
+                output.writeObject(this);
+                this.setFile(new File(Directories.rhrDirs+this.getFilename()+Suffixs.rhrfix));
+            }
+        }catch (Exception ex){
+            new Alert(Alert.AlertType.ERROR,"IOException.").showAndWait();
+        }
     }
 }
