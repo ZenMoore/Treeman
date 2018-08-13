@@ -2,8 +2,12 @@ package com.mox.zenmoore.view.right.RhR_plus;
 
 import com.mox.zenmoore.model.Congratulations;
 import com.mox.zenmoore.model.RHRItem;
+import javafx.scene.control.Alert;
 import javafx.scene.control.RadioButton;
+import javafx.scene.input.MouseButton;
 import javafx.scene.text.Font;
+
+import java.util.Calendar;
 
 public class RHRadioButton extends RadioButton implements Cloneable{
 
@@ -25,14 +29,25 @@ public class RHRadioButton extends RadioButton implements Cloneable{
         }
 
         setOnAction(e->{
-            this.setText(Congratulations.RHRdeveloped);
-            this.setDisable(true);
-            this.rhrItem.delete();
+               this.setText(Congratulations.RHRdeveloped);
+               this.setDisable(true);
+               this.rhrItem.delete();
+        });
+
+        setOnMouseClicked(e->{
+            if(e.getButton().equals(MouseButton.SECONDARY)){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION,this.rhrItem.getFilename()
+                +": "+this.rhrItem.getCalendar().get(Calendar.YEAR)+"-"+this.rhrItem.getCalendar().get(Calendar.MONTH)
+                        +"-"+this.rhrItem.getCalendar().get(Calendar.DATE)+
+                        "\n"+this.rhrItem.getInformation());
+                alert.setHeaderText("信息");
+                alert.setTitle("信息");
+                alert.showAndWait();
+            }
         });
     }
 
     public RHRItem getRhrItem() {
         return rhrItem;
     }
-
 }

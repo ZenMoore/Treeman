@@ -82,6 +82,9 @@ public class Controller_addrhr extends Controller{
     @FXML // fx:id="rb5"
     private RadioButton rb5; // Value injected by FXMLLoader
 
+    @FXML
+    private TextArea information;
+
     private int priority=0;
 
     @FXML
@@ -107,7 +110,7 @@ public class Controller_addrhr extends Controller{
                 Calendar calendar=new GregorianCalendar();
                 String[] infors=datepicker.getEditor().getText().split("/");
                 calendar.set(Integer.parseInt(infors[0]),Integer.parseInt(infors[1]),Integer.parseInt(infors[2]));
-                new RHRItem(text_1.getText(),calendar,priority,text_2.getText());
+                new RHRItem(text_1.getText(),calendar,priority,text_2.getText(),information.getText());
             }
 
         }
@@ -134,6 +137,7 @@ public class Controller_addrhr extends Controller{
         assert rb2 != null : "fx:id=\"rb2\" was not injected: check your FXML file 'addrhr.fxml'.";
         assert rb4 != null : "fx:id=\"rb4\" was not injected: check your FXML file 'addrhr.fxml'.";
         assert rb5 != null : "fx:id=\"rb5\" was not injected: check your FXML file 'addrhr.fxml'.";
+        assert information != null : "fx:id=\"information\" was not injected: check your FXML file 'addrhr.fxml'.";
 
         button.setOnMouseEntered(e->{
             button.setStyle("-fx-background-color: #FFF5EE; -fx-border-color: #FFF5EE; -fx-border-radius: 5px");
@@ -200,5 +204,6 @@ public class Controller_addrhr extends Controller{
             group.getSelectedToggle().setSelected(false);
         }
         datepicker.setValue(LocalDate.now().plusDays(21));
+        information.setText("");
     }
 }

@@ -2,8 +2,12 @@ package com.mox.zenmoore.view.left;
 
 import com.mox.zenmoore.model.Congratulations;
 import com.mox.zenmoore.model.Task;
+import javafx.scene.control.Alert;
 import javafx.scene.control.RadioButton;
+import javafx.scene.input.MouseButton;
 import javafx.scene.text.Font;
+
+import java.util.Calendar;
 
 public class TodRadioButton extends RadioButton implements Cloneable {
     private Task task;
@@ -27,6 +31,16 @@ public class TodRadioButton extends RadioButton implements Cloneable {
             this.setText(Congratulations.taskFinish);
             this.setDisable(true);
             this.task.delete();
+        });
+
+        setOnMouseClicked(e->{
+            if(e.getButton().equals(MouseButton.SECONDARY)){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION,this.task.getFilename()
+                        +": "+ "\n"+this.task.getInformation());
+                alert.setHeaderText("信息");
+                alert.setTitle("信息");
+                alert.showAndWait();
+            }
         });
     }
 

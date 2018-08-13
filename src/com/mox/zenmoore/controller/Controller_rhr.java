@@ -6,6 +6,7 @@ package com.mox.zenmoore.controller;
 
 import java.io.File;
 import java.net.URL;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 import com.mox.zenmoore.model.Directories;
 import com.mox.zenmoore.model.RHRItem;
@@ -111,8 +112,12 @@ public class Controller_rhr extends Controller{
         group.setSpacing(10);
         group.setStyle("-fx-background-color: #F5F5F5;");
 
+        int quan = 0;
         for(File file : files){
             RHRadioButton radioButton=new RHRadioButton(new RHRItem(file));
+            if(radioButton.getRhrItem().getCalendar().getTimeInMillis()-System.currentTimeMillis()<=4320000000L){
+                radioButton.setStyle("-fx-background-color: #BC8F8F;");
+            }
             group.getChildren().add(radioButton);
         }
 

@@ -77,6 +77,6 @@
             <Font name="FZYaoTi" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="spring" layoutX="457.0" layoutY="15.0" mnemonicParsing="false" onAction="#spring" style="-fx-background-color: #FFFAFA;" text="&gt;&gt;" textOverrun="CENTER_WORD_ELLIPSIS" />
+      <Button fx:id="spring" layoutX="470.0" layoutY="15.0" mnemonicParsing="false" onAction="#spring" prefHeight="38.0" prefWidth="21.0" style="-fx-background-color: #FFFAFA;" text="&gt;&gt;" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true" />
    </children>
 </AnchorPane>

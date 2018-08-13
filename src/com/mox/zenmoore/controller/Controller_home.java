@@ -197,6 +197,7 @@ public class Controller_home extends Controller{
         toolBar.setStyle("-fx-background-color: #F5F5F5;");
         group.getChildren().add(toolBar);
 
+        int quan = 0;
         for(File file : files){
             TodRadioButton todRadioButton = new TodRadioButton(new Task(file));
             group.getChildren().add(todRadioButton);
@@ -252,4 +253,5 @@ public class Controller_home extends Controller{
         });
         return button;
     }
+
 }

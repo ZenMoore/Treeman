@@ -32,9 +32,9 @@ public class Home extends Application{
             primaryStage.getIcons().add(new Image("file:image/logo/logo.PNG"));
             primaryStage.setWidth(505);
             primaryStage.setResizable(false);
-            primaryStage.setX(70);
+            primaryStage.setX(420);
             primaryStage.setY(30);
-            primaryStage.setOpacity(0.88);
+            primaryStage.setOpacity(0.98);
             primaryStage.show();
 
         }catch (Exception ex){
@@ -44,14 +44,16 @@ public class Home extends Application{
 
     public static void spring(Stage primaryStage,boolean isFold){
         if(isFold){
-            Timeline animation = new Timeline(new KeyFrame(Duration.millis(27),e->{
+            Timeline animation = new Timeline(new KeyFrame(Duration.millis(10),e->{
                 primaryStage.setWidth(primaryStage.getWidth() + 10);
+                primaryStage.setX(primaryStage.getX()-6);
             }));
             animation.setCycleCount(59);
             animation.play();
         }else {
-            Timeline animation = new Timeline(new KeyFrame(Duration.millis(27),e->{
+            Timeline animation = new Timeline(new KeyFrame(Duration.millis(10),e->{
                 primaryStage.setWidth(primaryStage.getWidth() - 10);
+                primaryStage.setX(primaryStage.getX() + 6);
             }));
             animation.setCycleCount(59);
             animation.play();

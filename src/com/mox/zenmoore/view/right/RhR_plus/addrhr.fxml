@@ -4,15 +4,17 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" prefHeight="269.0" prefWidth="335.0" style="-fx-background-color: #FFFAFA;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mox.zenmoore.controller.Controller_addrhr">
+<AnchorPane fx:id="pane" prefHeight="413.0" prefWidth="337.0" style="-fx-background-color: #FFFAFA;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mox.zenmoore.controller.Controller_addrhr">
    <children>
-      <TextField fx:id="text_1" layoutX="72.0" layoutY="87.0" prefHeight="25.0" prefWidth="248.0" promptText="This is your Task." />
+      <TextField fx:id="text_1" layoutX="72.0" layoutY="87.0" prefHeight="25.0" prefWidth="248.0" promptText="This is your RHR." />
       <Label fx:id="label_con" layoutX="14.0" layoutY="87.0" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: #FFFAFA;" text="Content" />
       <Label fx:id="label_pri" layoutX="14.0" layoutY="159.0" prefHeight="25.0" prefWidth="52.0" text="Priority" />
       <Label fx:id="label_nam" layoutX="14.0" layoutY="194.0" prefHeight="25.0" prefWidth="52.0" text="Name" />
@@ -22,7 +24,7 @@
             <Image url="@../../FXMLImage/addrhr.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="button" layoutX="249.0" layoutY="231.0" mnemonicParsing="false" onAction="#add" style="-fx-background-color: #FFFAF0; -fx-border-color: #FFF5EE; -fx-border-radius: 5px;" text="Add" />
+      <Button fx:id="button" layoutX="260.0" layoutY="373.0" mnemonicParsing="false" onAction="#add" style="-fx-background-color: #FFFAF0; -fx-border-color: #FFF5EE; -fx-border-radius: 5px;" text="Add" />
       <RadioButton fx:id="rb1" layoutX="72.0" layoutY="164.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="33.0" text="轻">
          <toggleGroup>
             <ToggleGroup fx:id="group" />
@@ -32,7 +34,12 @@
       <RadioButton fx:id="rb2" layoutX="119.0" layoutY="164.0" mnemonicParsing="false" text="缓" toggleGroup="$group" />
       <RadioButton fx:id="rb4" layoutX="205.0" layoutY="164.0" mnemonicParsing="false" text="急" toggleGroup="$group" />
       <RadioButton fx:id="rb5" layoutX="246.0" layoutY="164.0" mnemonicParsing="false" text="生死攸关" toggleGroup="$group" />
-      <DatePicker fx:id="datepicker" layoutX="72.0" layoutY="124.0" prefHeight="25.0" prefWidth="248.0" showWeekNumbers="true" />
+      <DatePicker fx:id="datepicker" layoutX="72.0" layoutY="124.0" prefHeight="25.0" prefWidth="248.0" promptText="Must-time." showWeekNumbers="true" />
       <Label fx:id="label_dea" layoutX="13.0" layoutY="124.0" prefHeight="25.0" prefWidth="52.0" text="Deadline" />
+      <TextArea fx:id="information" layoutX="16.0" layoutY="230.0" prefHeight="135.0" prefWidth="304.0" promptText="What about the RHR? Type the details and information in." style="-fx-background-color: #FFFAFA; -fx-border-color: #FFFAFA;" wrapText="true">
+         <font>
+            <Font name="Segoe UI Semibold" size="14.0" />
+         </font>
+      </TextArea>
    </children>
 </AnchorPane>

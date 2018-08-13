@@ -13,11 +13,12 @@ public class RHRItem extends Item {
      */
     private Calendar calendar;
 
-    public RHRItem(String content,Calendar calendar,int priority,String filename){
+    public RHRItem(String content,Calendar calendar,int priority,String filename,String information){
         this.setContent(content);
         this.setCalendar(calendar);
         this.setPriority(priority);
         this.setFilename(filename);
+        this.setInformation(information);
         this.autoSetFile();
     }
 
@@ -33,6 +34,7 @@ public class RHRItem extends Item {
                 this.setContent(item.getContent());
                 this.setPriority(item.getPriority());
                 this.calendar = item.getCalendar();
+                this.setInformation(item.getInformation());
            }
        }catch (Exception ex){
            new Alert(Alert.AlertType.ERROR,ex.getMessage()).showAndWait();

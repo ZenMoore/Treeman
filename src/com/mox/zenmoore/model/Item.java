@@ -12,6 +12,12 @@ public abstract class Item extends Model{
 
     private String filename;
 
+    private String information;
+
+    public String getInformation(){
+        return information;
+    }
+
     public String getContent() {
         return content;
     }
@@ -42,6 +48,10 @@ public abstract class Item extends Model{
 
     public void setFile(File file){
         this.file = file;
+    }
+
+    public void setInformation(String information){
+        this.information = information;
     }
 
     public abstract void autoSetFile();

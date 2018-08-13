@@ -67,6 +67,9 @@ public class Controller_addTod {
     @FXML // fx:id="rb5"
     private RadioButton rb5; // Value injected by FXMLLoader
 
+    @FXML
+    private TextArea information;
+
     private int priority  = 0;
 
     @FXML
@@ -89,7 +92,7 @@ public class Controller_addTod {
                 text_2.setText("");
                 return;
             }else {
-                new Task(text_2.getText(),text_1.getText(),priority);
+                new Task(text_2.getText(),text_1.getText(),priority,information.getText());
             }
 
         }
@@ -112,6 +115,7 @@ public class Controller_addTod {
         assert rb2 != null : "fx:id=\"rb2\" was not injected: check your FXML file 'addTod.fxml'.";
         assert rb4 != null : "fx:id=\"rb4\" was not injected: check your FXML file 'addTod.fxml'.";
         assert rb5 != null : "fx:id=\"rb5\" was not injected: check your FXML file 'addTod.fxml'.";
+        assert information != null : "fx:id=\"information\" was not injected: check your FXML file 'addTod.fxml'.";
 
         button.setOnMouseEntered(e->{
             button.setStyle("-fx-background-color: #FFF5EE; -fx-border-color: #FFF5EE; -fx-border-radius: 5px");
@@ -156,5 +160,6 @@ public class Controller_addTod {
         if(group.getSelectedToggle()!=null){
             group.getSelectedToggle().setSelected(false);
         }
+        information.setText("");
     }
 }

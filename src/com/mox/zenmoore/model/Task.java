@@ -6,10 +6,11 @@ import java.io.*;
 
 public class Task extends Item{
 
-    public Task(String filename,String content,int priority){
+    public Task(String filename,String content,int priority,String information){
             this.setContent(content);
             this.setFilename(filename);
             this.setPriority(priority);
+            this.setInformation(information);
             this.autoSetFile();
     }
 
@@ -23,6 +24,7 @@ public class Task extends Item{
                 Task item = (Task) inputStream.readObject();
                 this.setFilename(item.getFilename());
                 this.setContent(item.getContent());
+                this.setInformation(item.getInformation());
                 this.setPriority(item.getPriority());
             }
         }catch (Exception ex){
