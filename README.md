@@ -29,25 +29,25 @@ To help you to understand this mode more clearly and fast, we can draw an analog
 ![NPR Mode](https://github.com/ZenMoore/Treeman/blob/master/image/promotion/NPR_Mode.jpg?raw=true)
 
 **Notion** records the macro programs for you, which may be lifelong. The projects and RHCs are at service for The Notion and  It may include the following items according to your preference:
-* view of life, world and value
-* long-term dream, medium-term goal and short-term target
-* book-reading structure
-* lifelong learning policy
-* personal drive policy
-* the principle, policy and process for your introspectiveness
-* the framework for your subjects and attainment
-* fixed RHC
-* ...(other items you need)
+> view of life, world and value<br>
+> long-term dream, medium-term goal and short-term target<br>
+> book-reading structure<br>
+> lifelong learning policy<br>
+> personal drive policy<br>
+> the principle, policy and process for your introspectiveness<br>
+> the framework for your subjects and attainment<br>
+> fixed RHC<br>
+> ...(other items you need)<br>
 
 **Project** is rather a simple concept, which is plan. Needless to say it more, the following items sufficiently explain what the project covers.
-* RHC Collection
-* task or goal deployment
-* solution to problems
-* self-drive solution
-* analysis or evaluation model
-* experiment (tentative)
-* new thought
-*  ...(other items you need)
+> RHC Collection<br>
+> task or goal deployment<br>
+> solution to problems<br>
+> self-drive solution<br>
+> analysis or evaluation model<br>
+> experiment (tentative)<br>
+> new thought<br>
+>  ...(other items you need)<br>
 
 **RHC** is short for Rule, Habit and Cognition. To manage yourself, rule is in details, habit is standing, cognition is underlying(successively symbolizing precision, breadth and depth).
 
@@ -89,11 +89,11 @@ Treeman's development can be devided into three: Treewood stage, Treeman stage a
 
 Like the software project? Don't hesitate to join us. We are looking for the following contributor: 
 
-*  Technique person
-*  Content person
-*  Desigh person
-*  Promotion person
-*  Revenue stream person(maybe needless for TW)
+> Technique person<br>
+> Content person<br>
+> Desigh person<br>
+> Promotion person<br>
+> Revenue stream person(maybe needless for TW)<br>
 
 ![cooperation](https://images.pexels.com/photos/7075/people-office-group-team.jpg?auto=compress&cs=tinysrgb&dpr=2&h=350)
 
