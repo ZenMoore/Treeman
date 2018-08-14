@@ -93,7 +93,6 @@ Like the software project? Don't hesitate to join us. We are looking for the fol
 *  Content person
 *  Desigh person
 *  Promotion person
-
 *  Revenue stream person(maybe needless for TW)
 
 ![cooperation](https://images.pexels.com/photos/7075/people-office-group-team.jpg?auto=compress&cs=tinysrgb&dpr=2&h=350)
