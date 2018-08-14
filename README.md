@@ -1,4 +1,4 @@
-## What's Treeman?
+# What's Treeman?
 
 ![Treeman](https://images.pexels.com/photos/1078058/pexels-photo-1078058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350)
 
@@ -18,7 +18,7 @@ To carry it out, we create Treeman. The core of the primitive treeman is self-ma
 
 If treeman exerts a peculiar fascination on you, or you desire more details about lovely treeman, read on!
 
-## What's NPR mode?
+# What's NPR mode?
 
 We take notion-project-rhc mode to help you to manage yourself.
 
@@ -55,7 +55,7 @@ To help you to understand this mode more clearly and fast, we can draw an analog
 
 OK, as you can see, the mode covers all the process to strengthen yourself, at least in the strategic level. Then, the operational level decides on yourself. So just do it!
 
-## What's the function?
+# What's the function?
 
 **Today** shows today's task.
 
@@ -69,7 +69,7 @@ OK, as you can see, the mode covers all the process to strengthen yourself, at l
 
 To learn more details, open the software and click the instruction-button, we are waiting for you.
 
-## What's the future?
+# What's the future?
 
 Treeman's development can be devided into three: Treewood stage, Treeman stage and Treecity stage.
 
@@ -85,23 +85,25 @@ Treeman's development can be devided into three: Treewood stage, Treeman stage a
 
 ![TC](https://images.pexels.com/photos/301930/pexels-photo-301930.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350)
 
-## Join us!
+# Join us!
 
 Like the software project? Don't hesitate to join us. We are looking for the following contributor: 
 
-* Technique person
-* Content person
-* Desigh person
-* Promotion person
-* Revenue stream person(maybe needless for TW)
+*  Technique person
+*  Content person
+*  Desigh person
+*  Promotion person
+*  Revenue stream person(maybe needless for TW)
 
 ![cooperation](https://images.pexels.com/photos/7075/people-office-group-team.jpg?auto=compress&cs=tinysrgb&dpr=2&h=350)
 
-## Contact us.
+# Contact us.
 
     QQ: 1057398161 WeChat: zen1057398161
     Sina_Weibo: ZenMoore Zhihu: ZenMoore
     SourceForge: zenmoo Facebook: Zens Moore
+
+
 [Treeman Github](https://github.com/ZenMoore/Treeman) |
 [Treeman Coding](https://coding.net/u/ZenMoore/p/Treeman) |
 [Treeman Page](https://ZenMoore.github.io/Treeman)<br>
