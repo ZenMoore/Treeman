@@ -29,15 +29,15 @@ To help you to understand this mode more clearly and fast, we can draw an analog
 ![NPR Mode](https://github.com/ZenMoore/Treeman/blob/master/image/promotion/NPR_Mode.jpg?raw=true)
 
 **Notion** records the macro programs for you, which may be lifelong. The projects and RHCs are at service for The Notion and  It may include the following items according to your preference:
-*  view of life, world and value
-*  long-term dream, medium-term goal and short-term target
-*  book-reading structure
-*  lifelong learning policy
-*  personal drive policy
-*  the principle, policy and process for your introspectiveness
-*  the framework for your subjects and attainment
-*  fixed RHC
-*  ...(other items you need)
+-  view of life, world and value
+-  long-term dream, medium-term goal and short-term target
+-  book-reading structure
+-  lifelong learning policy
+-  personal drive policy
+-  the principle, policy and process for your introspectiveness
+-  the framework for your subjects and attainment
+-  fixed RHC
+-  ...(other items you need)
 
 **Project** is rather a simple concept, which is plan. Needless to say it more, the following items sufficiently explain what the project covers.
 * RHC Collection
