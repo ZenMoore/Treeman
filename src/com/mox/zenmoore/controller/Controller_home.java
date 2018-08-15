@@ -11,9 +11,9 @@ import com.mox.zenmoore.model.Directories;
 import com.mox.zenmoore.model.Task;
 import com.mox.zenmoore.view.Home;
 import com.mox.zenmoore.view.left.TodRadioButton;
+import com.mox.zenmoore.view.right.RHC;
 import com.mox.zenmoore.view.tool.Ad;
 import com.mox.zenmoore.view.tool.Feedback;
-import com.mox.zenmoore.view.right.RHR;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -117,7 +117,7 @@ public class Controller_home extends Controller{
 
     @FXML
     void showRHRs(MouseEvent event) {
-        new RHR().start();
+        new RHC().start();
     }
 
     @FXML

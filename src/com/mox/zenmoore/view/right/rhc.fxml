@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" prefHeight="508.0" prefWidth="448.0" style="-fx-background-color: #F5F5F5;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mox.zenmoore.controller.Controller_rhr">
+<AnchorPane fx:id="pane" prefHeight="508.0" prefWidth="448.0" style="-fx-background-color: #F5F5F5;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mox.zenmoore.controller.Controller_rhc">
    <children>
       <ImageView fx:id="motionImage" fitHeight="28.0" fitWidth="350.0" layoutX="9.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../FXMLImage/rhr_motion.jpg" />
+            <Image url="@../FXMLImage/rhc_motion.jpg" />
          </image>
       </ImageView>
       <ScrollPane fx:id="srp_rhr" layoutX="9.0" layoutY="53.0" prefHeight="441.0" prefWidth="427.0" style="-fx-background-color: #F5F5F5; " />

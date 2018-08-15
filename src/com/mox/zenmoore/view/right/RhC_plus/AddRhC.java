@@ -1,20 +1,20 @@
-package com.mox.zenmoore.view.right.RhR_plus;
+package com.mox.zenmoore.view.right.RhC_plus;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AddRhR extends Stage {
+public class AddRhC extends Stage {
 
     public void start(){
         try{
-            Parent root=FXMLLoader.load(getClass().getResource("addrhr.fxml"));
+            Parent root=FXMLLoader.load(getClass().getResource("addrhc.fxml"));
 
             Scene scene=new Scene(root);
 
             this.setScene(scene);
-            this.setTitle("AddRhR");
+            this.setTitle("AddRhC");
             this.setResizable(false);
             this.show();
         }catch (Exception ex){

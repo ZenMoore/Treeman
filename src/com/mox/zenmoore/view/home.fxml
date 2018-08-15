@@ -39,7 +39,7 @@
       </ImageView>
       <ImageView fx:id="RHRImage" fitHeight="194.0" fitWidth="184.0" layoutX="25.0" layoutY="334.0" onMouseClicked="#showRHRs" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@FXMLImage/rhr.jpg" />
+            <Image url="@FXMLImage/rhc.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="PluginImage" fitHeight="184.0" fitWidth="184.0" layoutX="269.0" layoutY="334.0" onMouseClicked="#showPlugins" pickOnBounds="true" preserveRatio="true">

@@ -1,17 +1,16 @@
 /**
- * Sample Skeleton for 'rhr.fxml' Controller Class
+ * Sample Skeleton for 'rhc.fxml' Controller Class
  */
 
 package com.mox.zenmoore.controller;
 
 import java.io.File;
 import java.net.URL;
-import java.util.Calendar;
 import java.util.ResourceBundle;
 import com.mox.zenmoore.model.Directories;
-import com.mox.zenmoore.model.RHRItem;
-import com.mox.zenmoore.view.right.RhR_plus.AddRhR;
-import com.mox.zenmoore.view.right.RhR_plus.RHRadioButton;
+import com.mox.zenmoore.model.RHCItem;
+import com.mox.zenmoore.view.right.RhC_plus.AddRhC;
+import com.mox.zenmoore.view.right.RhC_plus.RHCRadioButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -20,7 +19,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
-public class Controller_rhr extends Controller{
+public class Controller_rhc extends Controller{
 
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -45,7 +44,7 @@ public class Controller_rhr extends Controller{
 
     @FXML
     void showAddDialog(ActionEvent event) {
-        new AddRhR().start();
+        new AddRhC().start();
     }
 
     @FXML
@@ -56,10 +55,10 @@ public class Controller_rhr extends Controller{
     @FXML // This method is called by the FXMLLoader when initialization is complete
     @Override
     void initialize() {
-        assert pane != null : "fx:id=\"pane\" was not injected: check your FXML file 'rhr.fxml'.";
-        assert motionImage != null : "fx:id=\"motionImage\" was not injected: check your FXML file 'rhr.fxml'.";
-        assert srp_rhr != null : "fx:id=\"srp_rhr\" was not injected: check your FXML file 'rhr.fxml'.";
-        assert addRhR != null : "fx:id=\"addRhR\" was not injected: check your FXML file 'rhr.fxml'.";
+        assert pane != null : "fx:id=\"pane\" was not injected: check your FXML file 'rhc.fxml'.";
+        assert motionImage != null : "fx:id=\"motionImage\" was not injected: check your FXML file 'rhc.fxml'.";
+        assert srp_rhr != null : "fx:id=\"srp_rhr\" was not injected: check your FXML file 'rhc.fxml'.";
+        assert addRhR != null : "fx:id=\"addRhR\" was not injected: check your FXML file 'rhc.fxml'.";
 
         addRhR.setOnMouseEntered(e->{
             addRhR.setStyle("-fx-background-color: #87CEFA; -fx-border-radius: 5px;");
@@ -102,20 +101,20 @@ public class Controller_rhr extends Controller{
 
     void loadItems(){
 
-        File dir=new File(Directories.rhrDirs);
+        File dir=new File(Directories.rhcDirs);
         if(!dir.exists()){
             dir.mkdirs();
         }
 
-        File[] files=new File(Directories.rhrDirs).listFiles();
+        File[] files=new File(Directories.rhcDirs).listFiles();
         VBox group = new VBox();
         group.setSpacing(10);
         group.setStyle("-fx-background-color: #F5F5F5;");
 
         int quan = 0;
         for(File file : files){
-            RHRadioButton radioButton=new RHRadioButton(new RHRItem(file));
-            if(radioButton.getRhrItem().getCalendar().getTimeInMillis()-System.currentTimeMillis()<=4320000000L){
+            RHCRadioButton radioButton=new RHCRadioButton(new RHCItem(file));
+            if(radioButton.getRHCItem().getCalendar().getTimeInMillis()-System.currentTimeMillis()<=4320000000L){
                 radioButton.setStyle("-fx-background-color: #BC8F8F;");
             }
             group.getChildren().add(radioButton);

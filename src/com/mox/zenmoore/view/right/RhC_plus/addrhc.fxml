@@ -12,16 +12,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" prefHeight="413.0" prefWidth="337.0" style="-fx-background-color: #FFFAFA;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mox.zenmoore.controller.Controller_addrhr">
+<AnchorPane fx:id="pane" prefHeight="413.0" prefWidth="337.0" style="-fx-background-color: #FFFAFA;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mox.zenmoore.controller.Controller_addrhc">
    <children>
-      <TextField fx:id="text_1" layoutX="72.0" layoutY="87.0" prefHeight="25.0" prefWidth="248.0" promptText="This is your RHR." />
+      <TextField fx:id="text_1" layoutX="72.0" layoutY="87.0" prefHeight="25.0" prefWidth="248.0" promptText="This is your RHC." />
       <Label fx:id="label_con" layoutX="14.0" layoutY="87.0" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: #FFFAFA;" text="Content" />
       <Label fx:id="label_pri" layoutX="14.0" layoutY="159.0" prefHeight="25.0" prefWidth="52.0" text="Priority" />
       <Label fx:id="label_nam" layoutX="14.0" layoutY="194.0" prefHeight="25.0" prefWidth="52.0" text="Name" />
       <TextField fx:id="text_2" layoutX="72.0" layoutY="194.0" prefHeight="25.0" prefWidth="248.0" promptText="We need this name to name the file." />
       <ImageView fx:id="image" fitHeight="72.0" fitWidth="304.0" layoutX="15.0" layoutY="6.0" pickOnBounds="true">
          <image>
-            <Image url="@../../FXMLImage/addrhr.jpg" />
+            <Image url="@../../FXMLImage/addrhc.jpg" />
          </image>
       </ImageView>
       <Button fx:id="button" layoutX="260.0" layoutY="373.0" mnemonicParsing="false" onAction="#add" style="-fx-background-color: #FFFAF0; -fx-border-color: #FFF5EE; -fx-border-radius: 5px;" text="Add" />
@@ -36,7 +36,7 @@
       <RadioButton fx:id="rb5" layoutX="246.0" layoutY="164.0" mnemonicParsing="false" text="生死攸关" toggleGroup="$group" />
       <DatePicker fx:id="datepicker" layoutX="72.0" layoutY="124.0" prefHeight="25.0" prefWidth="248.0" promptText="Must-time." showWeekNumbers="true" />
       <Label fx:id="label_dea" layoutX="13.0" layoutY="124.0" prefHeight="25.0" prefWidth="52.0" text="Deadline" />
-      <TextArea fx:id="information" layoutX="16.0" layoutY="230.0" prefHeight="135.0" prefWidth="304.0" promptText="What about the RHR? Type the details and information in." style="-fx-background-color: #FFFAFA; -fx-border-color: #FFFAFA;" wrapText="true">
+      <TextArea fx:id="information" layoutX="16.0" layoutY="230.0" prefHeight="135.0" prefWidth="304.0" promptText="What about the RHC? Type the details and information in." style="-fx-background-color: #FFFAFA; -fx-border-color: #FFFAFA;" wrapText="true">
          <font>
             <Font name="Segoe UI Semibold" size="14.0" />
          </font>

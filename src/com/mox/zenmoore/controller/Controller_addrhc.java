@@ -1,5 +1,5 @@
 /**
- * Sample Skeleton for 'addrhr.fxml' Controller Class
+ * Sample Skeleton for 'addrhc.fxml' Controller Class
  */
 
 package com.mox.zenmoore.controller;
@@ -13,20 +13,16 @@ import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
 
 import com.mox.zenmoore.model.Directories;
-import com.mox.zenmoore.model.RHRItem;
+import com.mox.zenmoore.model.RHCItem;
 import com.mox.zenmoore.model.Suffixs;
-import com.mox.zenmoore.view.right.RHR;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
-import javafx.stage.Window;
 import javafx.util.Callback;
 
-public class Controller_addrhr extends Controller{
+public class Controller_addrhc extends Controller{
 
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -97,12 +93,12 @@ public class Controller_addrhr extends Controller{
             new Alert(Alert.AlertType.ERROR,"Priority is not set.").showAndWait();
         }else{
             ArrayList<String> nameList = new ArrayList<>();
-            File[] files = new File(Directories.rhrDirs).listFiles();
+            File[] files = new File(Directories.rhcDirs).listFiles();
             for(File temp : files){
                 nameList.add(temp.getName());
             }
 
-            if(nameList.contains((text_2.getText()+Suffixs.rhrfix))){
+            if(nameList.contains((text_2.getText()+Suffixs.rhcfix))){
                 new Alert(Alert.AlertType.ERROR,"The name already exists.").showAndWait();
                 text_2.setText("");
                 return;
@@ -110,7 +106,7 @@ public class Controller_addrhr extends Controller{
                 Calendar calendar=new GregorianCalendar();
                 String[] infors=datepicker.getEditor().getText().split("/");
                 calendar.set(Integer.parseInt(infors[0]),Integer.parseInt(infors[1]),Integer.parseInt(infors[2]));
-                new RHRItem(text_1.getText(),calendar,priority,text_2.getText(),information.getText());
+                new RHCItem(text_1.getText(),calendar,priority,text_2.getText(),information.getText());
             }
 
         }
@@ -121,23 +117,23 @@ public class Controller_addrhr extends Controller{
     @FXML // This method is called by the FXMLLoader when initialization is complete
     @Override
     void initialize() {
-        assert pane != null : "fx:id=\"pane\" was not injected: check your FXML file 'addrhr.fxml'.";
-        assert text_1 != null : "fx:id=\"text_1\" was not injected: check your FXML file 'addrhr.fxml'.";
-        assert label_con != null : "fx:id=\"label_con\" was not injected: check your FXML file 'addrhr.fxml'.";
-        assert label_pri != null : "fx:id=\"label_pri\" was not injected: check your FXML file 'addrhr.fxml'.";
-        assert label_nam != null : "fx:id=\"label_nam\" was not injected: check your FXML file 'addrhr.fxml'.";
-        assert label_dea !=null : "fx:id=\"label_dea\" was not injected: check your FXML file 'addrhr.fxml'.";
-        assert text_2 != null : "fx:id=\"text_2\" was not injected: check your FXML file 'addrhr.fxml'.";
-        assert datepicker != null : "fx:id=\"datepicker\" was not injected: check your FXML file 'addrhr.fxml'.";
-        assert image != null : "fx:id=\"image\" was not injected: check your FXML file 'addrhr.fxml'.";
-        assert button != null : "fx:id=\"button\" was not injected: check your FXML file 'addrhr.fxml'.";
-        assert rb1 != null : "fx:id=\"rb1\" was not injected: check your FXML file 'addrhr.fxml'.";
-        assert group != null : "fx:id=\"group\" was not injected: check your FXML file 'addrhr.fxml'.";
-        assert rb3 != null : "fx:id=\"rb3\" was not injected: check your FXML file 'addrhr.fxml'.";
-        assert rb2 != null : "fx:id=\"rb2\" was not injected: check your FXML file 'addrhr.fxml'.";
-        assert rb4 != null : "fx:id=\"rb4\" was not injected: check your FXML file 'addrhr.fxml'.";
-        assert rb5 != null : "fx:id=\"rb5\" was not injected: check your FXML file 'addrhr.fxml'.";
-        assert information != null : "fx:id=\"information\" was not injected: check your FXML file 'addrhr.fxml'.";
+        assert pane != null : "fx:id=\"pane\" was not injected: check your FXML file 'addrhc.fxml'.";
+        assert text_1 != null : "fx:id=\"text_1\" was not injected: check your FXML file 'addrhc.fxml'.";
+        assert label_con != null : "fx:id=\"label_con\" was not injected: check your FXML file 'addrhc.fxml'.";
+        assert label_pri != null : "fx:id=\"label_pri\" was not injected: check your FXML file 'addrhc.fxml'.";
+        assert label_nam != null : "fx:id=\"label_nam\" was not injected: check your FXML file 'addrhc.fxml'.";
+        assert label_dea !=null : "fx:id=\"label_dea\" was not injected: check your FXML file 'addrhc.fxml'.";
+        assert text_2 != null : "fx:id=\"text_2\" was not injected: check your FXML file 'addrhc.fxml'.";
+        assert datepicker != null : "fx:id=\"datepicker\" was not injected: check your FXML file 'addrhc.fxml'.";
+        assert image != null : "fx:id=\"image\" was not injected: check your FXML file 'addrhc.fxml'.";
+        assert button != null : "fx:id=\"button\" was not injected: check your FXML file 'addrhc.fxml'.";
+        assert rb1 != null : "fx:id=\"rb1\" was not injected: check your FXML file 'addrhc.fxml'.";
+        assert group != null : "fx:id=\"group\" was not injected: check your FXML file 'addrhc.fxml'.";
+        assert rb3 != null : "fx:id=\"rb3\" was not injected: check your FXML file 'addrhc.fxml'.";
+        assert rb2 != null : "fx:id=\"rb2\" was not injected: check your FXML file 'addrhc.fxml'.";
+        assert rb4 != null : "fx:id=\"rb4\" was not injected: check your FXML file 'addrhc.fxml'.";
+        assert rb5 != null : "fx:id=\"rb5\" was not injected: check your FXML file 'addrhc.fxml'.";
+        assert information != null : "fx:id=\"information\" was not injected: check your FXML file 'addrhc.fxml'.";
 
         button.setOnMouseEntered(e->{
             button.setStyle("-fx-background-color: #FFF5EE; -fx-border-color: #FFF5EE; -fx-border-radius: 5px");

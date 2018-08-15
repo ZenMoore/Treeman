@@ -7,12 +7,9 @@ package com.mox.zenmoore.controller;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
 
 import com.mox.zenmoore.model.Directories;
-import com.mox.zenmoore.model.RHRItem;
 import com.mox.zenmoore.model.Suffixs;
 import com.mox.zenmoore.model.Task;
 import javafx.event.ActionEvent;

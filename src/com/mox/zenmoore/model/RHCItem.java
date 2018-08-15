@@ -5,15 +5,15 @@ import javafx.scene.control.Alert;
 import java.io.*;
 import java.util.Calendar;
 
-public class RHRItem extends Item {
+public class RHCItem extends Item {
 
 //    private boolean isDeveloped;
     /**
-     * 说的是什么时候养成一个 RHR
+     * 说的是什么时候养成一个 RHC
      */
     private Calendar calendar;
 
-    public RHRItem(String content,Calendar calendar,int priority,String filename,String information){
+    public RHCItem(String content, Calendar calendar, int priority, String filename, String information){
         this.setContent(content);
         this.setCalendar(calendar);
         this.setPriority(priority);
@@ -22,14 +22,14 @@ public class RHRItem extends Item {
         this.autoSetFile();
     }
 
-    public RHRItem(File file){
+    public RHCItem(File file){
         this.setFile(file);
 
        try{
            try(
                    ObjectInputStream inputStream=new ObjectInputStream(new BufferedInputStream(new FileInputStream(this.getFile())))
            ){
-                RHRItem item = (RHRItem) inputStream.readObject();
+                RHCItem item = (RHCItem) inputStream.readObject();
                 this.setFilename(item.getFilename());
                 this.setContent(item.getContent());
                 this.setPriority(item.getPriority());
@@ -51,17 +51,17 @@ public class RHRItem extends Item {
 
     @Override
     public void autoSetFile(){
-        File dir=new File(Directories.rhrDirs);
+        File dir=new File(Directories.rhcDirs);
         if(!dir.exists()){
             dir.mkdirs();
         }
 
         try{
             try(
-                    ObjectOutputStream output=new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(Directories.rhrDirs+this.getFilename()+Suffixs.rhrfix)))
+                    ObjectOutputStream output=new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(Directories.rhcDirs +this.getFilename()+Suffixs.rhcfix)))
             ){
                 output.writeObject(this);
-                this.setFile(new File(Directories.rhrDirs+this.getFilename()+Suffixs.rhrfix));
+                this.setFile(new File(Directories.rhcDirs +this.getFilename()+Suffixs.rhcfix));
             }
         }catch (Exception ex){
             new Alert(Alert.AlertType.ERROR,"IOException.").showAndWait();
