@@ -11,6 +11,7 @@ import com.mox.zenmoore.model.Directories;
 import com.mox.zenmoore.model.Task;
 import com.mox.zenmoore.view.Home;
 import com.mox.zenmoore.view.left.TodRadioButton;
+import com.mox.zenmoore.view.right.Notion;
 import com.mox.zenmoore.view.right.RHC;
 import com.mox.zenmoore.view.tool.Ad;
 import com.mox.zenmoore.view.tool.Feedback;
@@ -102,7 +103,7 @@ public class Controller_home extends Controller{
 
     @FXML
     void showNotions(MouseEvent event) {
-
+        new Notion().start();
     }
 
     @FXML

@@ -3,11 +3,13 @@ package com.mox.zenmoore.view.right.RhC_plus;
 import com.mox.zenmoore.model.Congratulations;
 import com.mox.zenmoore.model.RHCItem;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.RadioButton;
 import javafx.scene.input.MouseButton;
 import javafx.scene.text.Font;
 
 import java.util.Calendar;
+import java.util.Optional;
 
 public class RHCRadioButton extends RadioButton implements Cloneable{
 
@@ -28,10 +30,15 @@ public class RHCRadioButton extends RadioButton implements Cloneable{
             case 5:this.setStyle("-fx-background-color: #FFC0CB;");break;
         }
 
-        setOnAction(e->{
-               this.setText(Congratulations.RHCdeveloped);
-               this.setDisable(true);
-               this.RHCItem.delete();
+        setOnAction(e->{Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Are you sure it's finished?");
+            Optional<ButtonType> result = alert.showAndWait();
+            if(result.isPresent() && result.get() == ButtonType.OK){
+                this.setText(Congratulations.RHCdeveloped);
+                this.setDisable(true);
+                this.RHCItem.delete();
+            }else{
+                this.setSelected(false);
+            }
         });
 
         setOnMouseClicked(e->{

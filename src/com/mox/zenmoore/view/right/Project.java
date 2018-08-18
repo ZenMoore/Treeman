@@ -1,4 +1,10 @@
 package com.mox.zenmoore.view.right;
 
-public class Project {
+import javafx.stage.Stage;
+
+public class Project extends Stage {
+
+    public void start(){
+
+    }
 }

@@ -3,11 +3,13 @@ package com.mox.zenmoore.view.left;
 import com.mox.zenmoore.model.Congratulations;
 import com.mox.zenmoore.model.Task;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.RadioButton;
 import javafx.scene.input.MouseButton;
 import javafx.scene.text.Font;
 
 import java.util.Calendar;
+import java.util.Optional;
 
 public class TodRadioButton extends RadioButton implements Cloneable {
     private Task task;
@@ -28,9 +30,15 @@ public class TodRadioButton extends RadioButton implements Cloneable {
         }
 
         setOnAction(e->{
-            this.setText(Congratulations.taskFinish);
-            this.setDisable(true);
-            this.task.delete();
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Are you sure it's finished?");
+            Optional<ButtonType> result = alert.showAndWait();
+            if(result.isPresent() && result.get() == ButtonType.OK){
+                this.setText(Congratulations.taskFinish);
+                this.setDisable(true);
+                this.task.delete();
+            }else{
+                this.setSelected(false);
+            }
         });
 
         setOnMouseClicked(e->{
