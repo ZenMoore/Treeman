@@ -12,9 +12,8 @@ import com.mox.zenmoore.model.Task;
 import com.mox.zenmoore.view.Home;
 import com.mox.zenmoore.view.left.TodRadioButton;
 import com.mox.zenmoore.view.right.Notion;
+import com.mox.zenmoore.view.right.Project;
 import com.mox.zenmoore.view.right.RHC;
-import com.mox.zenmoore.view.tool.Ad;
-import com.mox.zenmoore.view.tool.Feedback;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -42,9 +41,6 @@ public class Controller_home extends Controller{
     @FXML // fx:id="btn_display"
     private Button btn_display; // Value injected by FXMLLoader
 
-    @FXML // fx:id="srb"
-    private ComboBox<?> srb; // Value injected by FXMLLoader
-
     @FXML // fx:id="notionImage"
     private ImageView notionImage; // Value injected by FXMLLoader
 
@@ -56,18 +52,6 @@ public class Controller_home extends Controller{
 
     @FXML // fx:id="PluginImage"
     private ImageView PluginImage; // Value injected by FXMLLoader
-
-    @FXML // fx:id="btn_setting"
-    private Button btn_setting; // Value injected by FXMLLoader
-
-    @FXML // fx:id="btn_direction"
-    private Button btn_direction; // Value injected by FXMLLoader
-
-    @FXML // fx:id="btn_advertisement"
-    private Button btn_advertisement; // Value injected by FXMLLoader
-
-    @FXML // fx:id="btn_feedback"
-    private Button btn_feedback; // Value injected by FXMLLoader
 
     @FXML
     private ScrollPane srp_tod;
@@ -81,23 +65,7 @@ public class Controller_home extends Controller{
     }
 
     @FXML
-    void showAds(ActionEvent event) {
-        new Ad().start();
-    }
-
-    @FXML
-    void showDirections(ActionEvent event) {
-
-    }
-
-    @FXML
     void showDisplay(ActionEvent event) {
-
-    }
-
-    @FXML
-    void showFeedback(ActionEvent event) {
-        new Feedback().start();
 
     }
 
@@ -113,28 +81,12 @@ public class Controller_home extends Controller{
 
     @FXML
     void showProjects(MouseEvent event) {
-
+        new Project().start();
     }
 
     @FXML
     void showRHRs(MouseEvent event) {
         new RHC().start();
-    }
-
-    @FXML
-    void showSearchResult(ActionEvent event) {
-        Alert alert=new Alert(Alert.AlertType.ERROR);
-
-        alert.setTitle("Alert");
-        alert.setHeaderText("HaHaHa...");
-        alert.setContentText("Sorry sir...This is truly a fake search box...");
-
-        alert.showAndWait();
-    }
-
-    @FXML
-    void showSetting(ActionEvent event) {
-
     }
 
     @FXML
@@ -151,21 +103,15 @@ public class Controller_home extends Controller{
         assert homePane != null : "fx:id=\"homePane\" was not injected: check your FXML file 'home.fxml'.";
         assert homelabel != null : "fx:id=\"homelabel\" was not injected: check your FXML file 'home.fxml'.";
         assert btn_display != null : "fx:id=\"btn_display\" was not injected: check your FXML file 'home.fxml'.";
-        assert srb != null : "fx:id=\"srb\" was not injected: check your FXML file 'home.fxml'.";
         assert notionImage != null : "fx:id=\"notionImage\" was not injected: check your FXML file 'home.fxml'.";
         assert projectImage != null : "fx:id=\"projectImage\" was not injected: check your FXML file 'home.fxml'.";
         assert RHRImage != null : "fx:id=\"RHRImage\" was not injected: check your FXML file 'home.fxml'.";
         assert PluginImage != null : "fx:id=\"PluginImage\" was not injected: check your FXML file 'home.fxml'.";
-        assert btn_setting != null : "fx:id=\"btn_setting\" was not injected: check your FXML file 'home.fxml'.";
-        assert btn_direction != null : "fx:id=\"btn_direction\" was not injected: check your FXML file 'home.fxml'.";
-        assert btn_advertisement != null : "fx:id=\"btn_advertisement\" was not injected: check your FXML file 'home.fxml'.";
-        assert btn_feedback != null : "fx:id=\"btn_feedback\" was not injected: check your FXML file 'home.fxml'.";
         assert srp_tod != null : "fx:id=\"srp_tod\" was not injected: check your FXML file 'home.fxml'.";
         assert spring != null : "fx:id=\"spring\" was not injected: check your FXML file 'home.fxml'.";
 
-        setButtonStyle(btn_advertisement,btn_direction,btn_display,btn_feedback,btn_setting);
+        setButtonStyle(btn_display);
         loadTodays();
-        srb.setFocusTraversable(false);
     }
 
     private void setButtonStyle(Button... buttons){

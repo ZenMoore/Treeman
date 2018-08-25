@@ -34,7 +34,6 @@ public class Home extends Application{
             primaryStage.setResizable(false);
             primaryStage.setX(420);
             primaryStage.setY(30);
-            primaryStage.setOpacity(0.98);
             primaryStage.show();
 
         }catch (Exception ex){
