@@ -5,13 +5,20 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" prefHeight="541.0" prefWidth="529.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mox.zenmoore.controller.Controller_project">
+<AnchorPane fx:id="pane" prefHeight="547.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mox.zenmoore.controller.Controller_project">
    <children>
-      <ScrollPane fx:id="srp" layoutX="14.0" layoutY="53.0" prefHeight="479.0" prefWidth="499.0" vbarPolicy="ALWAYS" />
-      <Button fx:id="addbtn" layoutX="340.0" layoutY="14.0" mnemonicParsing="false" onAction="#addPro" text="新增计划" />
-      <Button fx:id="refbtn" layoutX="421.0" layoutY="14.0" mnemonicParsing="false" onAction="#refresh" text="刷新列表" />
-      <ImageView fx:id="imageview" fitHeight="35.0" fitWidth="320.0" layoutX="11.0" layoutY="9.0" pickOnBounds="true">
+      <ScrollPane fx:id="srp" layoutX="12.0" layoutY="53.0" prefHeight="474.0" prefWidth="575.0" vbarPolicy="ALWAYS" />
+      <Button fx:id="addbtn" layoutX="432.0" layoutY="15.0" mnemonicParsing="false" onAction="#addPro" style="-fx-background-color: #A4D3EE; -fx-background-radius: 100px;" text="Add Pro">
+         <font>
+            <Font name="Consolas" size="12.0" />
+         </font></Button>
+      <Button fx:id="refbtn" layoutX="515.0" layoutY="15.0" mnemonicParsing="false" onAction="#refresh" style="-fx-background-color: #A4D3EE; -fx-background-radius: 100px;" text="Refresh">
+         <font>
+            <Font name="Consolas" size="12.0" />
+         </font></Button>
+      <ImageView fx:id="imageview" fitHeight="34.0" fitWidth="401.0" layoutX="11.0" layoutY="9.0" pickOnBounds="true">
          <image>
             <Image url="@../FXMLImage/rhc_motion.jpg" />
          </image></ImageView>

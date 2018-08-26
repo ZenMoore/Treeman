@@ -33,7 +33,7 @@ public class Home extends Application{
             primaryStage.setWidth(505);
             primaryStage.setResizable(false);
             primaryStage.setX(420);
-            primaryStage.setY(30);
+            primaryStage.setY(70);
             primaryStage.show();
 
         }catch (Exception ex){

@@ -20,6 +20,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 
 public class Controller_project {
 
@@ -63,10 +64,12 @@ public class Controller_project {
         assert refbtn != null : "fx:id=\"refbtn\" was not injected: check your FXML file 'project.fxml'.";
         assert imageview != null : "fx:id=\"imageview\" was not injected: check your FXML file 'project.fxml'.";
 
+        setAddbtnStyle();
+        setRefbtnStyle();
         loadItems();
     }
 
-    void loadItems(){
+    private void loadItems(){
         File dir=new File(Directories.projectDirs);
         if(!dir.exists()){
             dir.mkdirs();
@@ -81,12 +84,48 @@ public class Controller_project {
         for(File file : files){
             ProCard card = new ProCard(new ProjectClause(file));
             if(card.getProjectClause().getEndDate().getTimeInMillis()-System.currentTimeMillis()<=4320000000L){
-                card.setStyle("-fx-background-color:#FFFAAA");
+                card.setStyle("-fx-border-color: #FF6A6A");
             }
 
             group.getChildren().add(card);
         }
 
         srp.setContent(group);
+    }
+
+    private void setAddbtnStyle(){
+        addbtn.setOnMouseEntered(e->{
+            addbtn.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 100px;");
+        });
+
+        addbtn.setOnMouseExited(e->{
+            addbtn.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
+        });
+
+        addbtn.setOnMousePressed(e->{
+            addbtn.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 100px;");
+        });
+
+        addbtn.setOnMouseReleased(e->{
+            addbtn.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
+        });
+    }
+
+    private void setRefbtnStyle(){
+        refbtn.setOnMouseEntered(e->{
+            refbtn.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 100px;");
+        });
+
+        refbtn.setOnMouseExited(e->{
+            refbtn.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
+        });
+
+        refbtn.setOnMousePressed(e->{
+            refbtn.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 100px;");
+        });
+
+        refbtn.setOnMouseReleased(e->{
+            refbtn.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
+        });
     }
 }

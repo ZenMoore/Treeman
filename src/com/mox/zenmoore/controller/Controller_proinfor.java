@@ -7,10 +7,7 @@ package com.mox.zenmoore.controller;
 import java.io.File;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.ResourceBundle;
+import java.util.*;
 
 import com.mox.zenmoore.model.Directories;
 import com.mox.zenmoore.model.ProjectClause;
@@ -93,8 +90,13 @@ public class Controller_proinfor {
 
     @FXML
     void delete(ActionEvent event) {
-        projectClause.delete();
-
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Are you sure to delete it?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if(result.isPresent() && result.get() == ButtonType.OK){
+            projectClause.delete();
+        }else {
+            return;
+        }
         Button button = (Button) event.getSource();
         Stage stage = (Stage) button.getScene().getWindow();
         stage.close();
@@ -123,6 +125,7 @@ public class Controller_proinfor {
         projectClause = SharedState.isInfor ? SharedState.projectClause:null;
 
         setBoxValue();
+        setButtonStyle(editbtn,addbtn,deletebtn,conbtn);
 
         if(SharedState.isInfor){
             addbtn.setDisable(true);
@@ -263,5 +266,25 @@ public class Controller_proinfor {
             }
         }
         return false;
+    }
+
+    private void setButtonStyle(Button... buttons){
+        for(Button button:buttons){
+            button.setOnMouseEntered(e->{
+                button.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 100px;");
+            });
+
+            button.setOnMouseExited(e->{
+                button.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
+            });
+
+            button.setOnMousePressed(e->{
+                button.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 100px;");
+            });
+
+            button.setOnMouseReleased(e->{
+                button.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
+            });
+        }
     }
 }

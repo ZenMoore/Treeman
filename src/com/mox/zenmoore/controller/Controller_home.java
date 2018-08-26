@@ -10,8 +10,10 @@ import java.util.ResourceBundle;
 import com.mox.zenmoore.model.Directories;
 import com.mox.zenmoore.model.Task;
 import com.mox.zenmoore.view.Home;
+import com.mox.zenmoore.view.left.Display;
 import com.mox.zenmoore.view.left.TodRadioButton;
 import com.mox.zenmoore.view.right.Notion;
+import com.mox.zenmoore.view.right.Plugin;
 import com.mox.zenmoore.view.right.Project;
 import com.mox.zenmoore.view.right.RHC;
 import javafx.event.ActionEvent;
@@ -60,13 +62,8 @@ public class Controller_home extends Controller{
     private Button spring;
 
     @FXML
-    void setToday(MouseEvent event){
-
-    }
-
-    @FXML
     void showDisplay(ActionEvent event) {
-
+        new Display().start();
     }
 
     @FXML
@@ -76,7 +73,7 @@ public class Controller_home extends Controller{
 
     @FXML
     void showPlugins(MouseEvent event) {
-
+        new Plugin().start();
     }
 
     @FXML
@@ -93,8 +90,8 @@ public class Controller_home extends Controller{
     void spring(ActionEvent event){
         Button button = (Button) event.getSource();
         Stage stage = (Stage) button.getScene().getWindow();
-        Home.spring(stage,button.getText().equals(">>"));
-        button.setText(button.getText().equals(">>") ? "<<" : ">>");
+        Home.spring(stage,button.getText().equals(">"));
+        button.setText(button.getText().equals(">") ? "<" : ">");
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
@@ -110,22 +107,9 @@ public class Controller_home extends Controller{
         assert srp_tod != null : "fx:id=\"srp_tod\" was not injected: check your FXML file 'home.fxml'.";
         assert spring != null : "fx:id=\"spring\" was not injected: check your FXML file 'home.fxml'.";
 
-        setButtonStyle(btn_display);
+        setSpringStyle();
+        setDbtnStyle();
         loadTodays();
-    }
-
-    private void setButtonStyle(Button... buttons){
-
-        for(Button temp: buttons){
-            temp.setOnMouseEntered(e->{
-                temp.setStyle("-fx-backgrond-color: #FFFAF0; -fx-border-color: #000000; -fx-border-radius: 5px;");
-            });
-
-            temp.setOnMouseExited(e->{
-                temp.setStyle("-fx-background-color: #FFFAFA; -fx-border-color: #000000; -fx-border-radius: 5px;");
-            });
-        }
-
     }
 
     private void loadTodays(){
@@ -154,25 +138,26 @@ public class Controller_home extends Controller{
     }
 
     private Button buttonAdd(){
-        Button button = new Button("+...");
-        button.setStyle("-fx-background-color: #F7F7F7;");
+        Button button = new Button("...");
+        button.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
         button.setOnAction(e->{
             new addTod().start();
         });
+
         button.setOnMouseEntered(e->{
-            button.setStyle("-fx-background-color: #F5F5DC; -fx-border-radius: 5px;");
+            button.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 100px;");
         });
 
         button.setOnMouseExited(e->{
-            button.setStyle("-fx-background-color: #F7F7F7; -fx-border-radius: 5px;");
+            button.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
         });
 
         button.setOnMousePressed(e->{
-            button.setStyle("-fx-background-color: #F5F5DC; -fx-border-radius: 5px;");
+            button.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 100px;");
         });
 
         button.setOnMouseReleased(e->{
-            button.setStyle("-fx-background-color: #F7F7F7; -fx-border-radius: 5px;");
+            button.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
         });
 
         return button;
@@ -180,25 +165,61 @@ public class Controller_home extends Controller{
 
     private Button buttonFresh(){
         Button button = new Button("⇵");
-        button.setStyle("-fx-background-color: #F7F7F7;");
+        button.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
         button.setOnAction(e->{
             loadTodays();
         });
         button.setOnMouseEntered(e->{
-            button.setStyle("-fx-background-color: #F5F5DC; -fx-border-radius: 5px;");
+            button.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 100px;");
         });
+
         button.setOnMouseExited(e->{
-            button.setStyle("-fx-background-color: #F7F7F7; -fx-border-radius: 5px;");
+            button.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
         });
 
         button.setOnMousePressed(e->{
-            button.setStyle("-fx-background-color: #F5F5DC; -fx-border-radius: 5px;");
+            button.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 100px;");
         });
 
         button.setOnMouseReleased(e->{
-            button.setStyle("-fx-background-color: #F7F7F7; -fx-border-radius: 5px;");
+            button.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
         });
         return button;
     }
 
+    private void setSpringStyle(){
+            spring.setOnMouseEntered(e->{
+                spring.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 100px;");
+            });
+
+            spring.setOnMouseExited(e->{
+                spring.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
+            });
+
+            spring.setOnMousePressed(e->{
+                spring.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 100px;");
+            });
+
+            spring.setOnMouseReleased(e->{
+                spring.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
+            });
+    }
+
+    private void setDbtnStyle(){
+        btn_display.setOnMouseEntered(e->{
+            btn_display.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 15px;");
+        });
+
+        btn_display.setOnMouseExited(e->{
+            btn_display.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 15px;");
+        });
+
+        btn_display.setOnMousePressed(e->{
+            btn_display.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 15px;");
+        });
+
+        btn_display.setOnMouseReleased(e->{
+            btn_display.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 15px;");
+        });
+    }
 }

@@ -12,11 +12,23 @@
 <AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="321.0" prefWidth="576.0" style="-fx-background-image: url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1534049790806&amp;di=7eed39cc49af14e8304b79da79beea45&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01006f55e2d00932f875a1328c5f44.gif);" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mox.zenmoore.controller.Controller_addTod">
    <children>
       <TextField fx:id="text_1" layoutX="82.0" layoutY="79.0" prefHeight="25.0" prefWidth="248.0" promptText="This is your task." />
-      <Label fx:id="label_con" layoutX="24.0" layoutY="79.0" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: #FFFAFA;" text="Content" />
-      <Label fx:id="label_pri" layoutX="24.0" layoutY="146.0" prefHeight="25.0" prefWidth="52.0" text="Priority" />
-      <Label fx:id="label_nam" layoutX="24.0" layoutY="212.0" prefHeight="25.0" prefWidth="52.0" text="Name" />
+      <Label fx:id="label_con" layoutX="17.0" layoutY="79.0" prefHeight="25.0" prefWidth="52.0" text="Content">
+         <font>
+            <Font name="Consolas" size="12.0" />
+         </font></Label>
+      <Label fx:id="label_pri" layoutX="16.0" layoutY="146.0" prefHeight="25.0" prefWidth="60.0" text="Priority">
+         <font>
+            <Font name="Consolas" size="12.0" />
+         </font></Label>
+      <Label fx:id="label_nam" layoutX="17.0" layoutY="212.0" prefHeight="25.0" prefWidth="52.0" text="Name">
+         <font>
+            <Font name="Consolas" size="12.0" />
+         </font></Label>
       <TextField fx:id="text_2" layoutX="82.0" layoutY="212.0" prefHeight="25.0" prefWidth="248.0" promptText="We need this name to name the file." />
-      <Button fx:id="button" layoutX="493.0" layoutY="281.0" mnemonicParsing="false" onAction="#add" style="-fx-background-color: #FFFAF0; -fx-border-color: #FFF5EE; -fx-border-radius: 5px;" text="Add" />
+      <Button fx:id="button" layoutX="493.0" layoutY="281.0" mnemonicParsing="false" onAction="#add" style="-fx-background-color: #A4D3EE; -fx-background-radius: 100px;" text="Add">
+         <font>
+            <Font name="Consolas" size="12.0" />
+         </font></Button>
       <RadioButton fx:id="rb1" layoutX="84.0" layoutY="151.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="33.0" text="轻">
          <toggleGroup>
             <ToggleGroup fx:id="group" />

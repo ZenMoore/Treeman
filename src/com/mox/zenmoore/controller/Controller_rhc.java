@@ -61,35 +61,35 @@ public class Controller_rhc extends Controller{
         assert addRhR != null : "fx:id=\"addRhR\" was not injected: check your FXML file 'rhc.fxml'.";
 
         addRhR.setOnMouseEntered(e->{
-            addRhR.setStyle("-fx-background-color: #87CEFA; -fx-border-radius: 5px;");
+            addRhR.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 100px;");
         });
 
         addRhR.setOnMouseExited(e->{
-            addRhR.setStyle("-fx-background-color: #FFEBCD; -fx-border-radius: 5px;");
+            addRhR.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
         });
 
         addRhR.setOnMousePressed(e->{
-            addRhR.setStyle("-fx-background-color: #FFEBCD; -fx-border-radius: 5px;");
+            addRhR.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 100px;");
         });
 
         addRhR.setOnMouseReleased(e->{
-            addRhR.setStyle("-fx-background-color: #87CEFA; -fx-border-radius: 5px;");
+            addRhR.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
         });
 
         refresh.setOnMouseEntered(e->{
-            refresh.setStyle("-fx-background-color: #87CEFA; -fx-border-radius: 5px;");
+            refresh.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 100px;");
         });
 
         refresh.setOnMouseExited(e->{
-            refresh.setStyle("-fx-background-color: #FFEBCD; -fx-border-radius: 5px;");
+            refresh.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
         });
 
         refresh.setOnMousePressed(e->{
-            refresh.setStyle("-fx-background-color: #FFEBCD; -fx-border-radius: 5px;");
+            refresh.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 100px;");
         });
 
         refresh.setOnMouseReleased(e->{
-            refresh.setStyle("-fx-background-color: #87CEFA; -fx-border-radius: 5px;");
+            refresh.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
         });
 
         srp_rhr.setPannable(true);

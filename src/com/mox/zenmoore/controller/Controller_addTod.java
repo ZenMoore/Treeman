@@ -115,19 +115,19 @@ public class Controller_addTod {
         assert information != null : "fx:id=\"information\" was not injected: check your FXML file 'addTod.fxml'.";
 
         button.setOnMouseEntered(e->{
-            button.setStyle("-fx-background-color: #FFF5EE; -fx-border-color: #FFF5EE; -fx-border-radius: 5px");
+            button.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 100px;");
         });
 
         button.setOnMouseExited(e->{
-            button.setStyle("-fx-background-color: #FFFAF0; -fx-border-color: #FFFAF0; -fx-border-radius: 5px");
+            button.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
         });
 
         button.setOnMousePressed(e->{
-            button.setStyle("-fx-background-color: #FFF0F5; -fx-border-color: #FFF0F5; -fx-border-radius: 5px");
+            button.setStyle("-fx-background-color: #4169E1; -fx-background-radius: 100px;");
         });
 
         button.setOnMouseReleased(e->{
-            button.setStyle("-fx-background-color: #FFF5EE; border-fx-border-color: #FFF5EE;-fx-border-radius: 5px");
+            button.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
         });
 
         rb1.setOnAction(e->{
