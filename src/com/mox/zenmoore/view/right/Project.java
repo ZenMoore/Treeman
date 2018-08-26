@@ -20,6 +20,7 @@ public class Project extends Stage {
             this.show();
         }catch (Exception ex ){
             new Alert(Alert.AlertType.ERROR,ex.getMessage()).showAndWait();
+//            ex.printStackTrace();
         }
     }
 }

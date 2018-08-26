@@ -6,20 +6,21 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
-public class AddPro extends Stage {
+public class ProInfor extends Stage {
 
     public void start(){
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("addpro.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("proinfor.fxml"));
 
             Scene scene = new Scene(root);
 
             this.setResizable(false);
             this.setScene(scene);
-            this.setTitle("Add Project");
+            this.setTitle("Project Information");
             this.show();
         }catch (Exception ex){
-            new Alert(Alert.AlertType.ERROR,ex.getMessage()).showAndWait();
+//            new Alert(Alert.AlertType.ERROR,ex.getMessage()).showAndWait();
+            ex.printStackTrace();
         }
     }
 }

@@ -51,24 +51,52 @@ public class ProjectClause extends Model implements Serializable {
         }
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public Calendar getStartDate() {
+        return startDate;
+    }
+
     public Calendar getEndDate() {
         return endDate;
     }
 
+    public ProjectType getType() {
+        return type;
+    }
+
+    public String getDigest() {
+        return digest;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public File getFile() {
+        return file;
+    }
+
     @Override
     public void delete(){
-        this.file.delete();
+        this.getFile().delete();
 
     }
 
-    private enum ProjectType{
-        R, //RHC Collection
-        T, //task or goal deployment
-        M, //solution to problems
-        O, //self-drive solution
-        L, //analysis or evaluation model
-        E, //experiment (tentative)
-        I  //new thought
+    public enum ProjectType{
+        RHC_COLLECTION, //RHC Collection
+        TASK_OR_GOAL_DEPLOYMENT, //task or goal deployment
+        SOLUTION_TO_PROBLEMS, //solution to problems
+        SELF_DRIVE_SOLUTION, //self-drive solution
+        ANALYSIS_OR_EVALUATION_MODEL, //analysis or evaluation model
+        EXPERIMENT, //experiment (tentative)
+        NEW_THOUGHT  //new thought
     }
 
     public void autosetfile(){

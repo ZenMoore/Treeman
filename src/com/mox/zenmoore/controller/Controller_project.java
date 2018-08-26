@@ -9,10 +9,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.mox.zenmoore.model.Directories;
-import com.mox.zenmoore.model.RHCItem;
-import com.mox.zenmoore.view.right.Pro_plus.AddPro;
+import com.mox.zenmoore.model.ProjectClause;
+import com.mox.zenmoore.view.right.Pro_plus.ProInfor;
 import com.mox.zenmoore.view.right.Pro_plus.ProCard;
-import com.mox.zenmoore.view.right.RhC_plus.RHCRadioButton;
+import com.mox.zenmoore.view.right.Pro_plus.SharedState;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -20,8 +20,6 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 
 public class Controller_project {
 
@@ -48,7 +46,8 @@ public class Controller_project {
 
     @FXML
     void addPro(ActionEvent event) {
-        new AddPro().start();
+        SharedState.isAdd = true;
+        new ProInfor().start();
     }
 
     @FXML
@@ -64,6 +63,7 @@ public class Controller_project {
         assert refbtn != null : "fx:id=\"refbtn\" was not injected: check your FXML file 'project.fxml'.";
         assert imageview != null : "fx:id=\"imageview\" was not injected: check your FXML file 'project.fxml'.";
 
+        loadItems();
     }
 
     void loadItems(){
@@ -79,7 +79,7 @@ public class Controller_project {
 
         int quan = 0;
         for(File file : files){
-            ProCard card = new ProCard(file);
+            ProCard card = new ProCard(new ProjectClause(file));
             if(card.getProjectClause().getEndDate().getTimeInMillis()-System.currentTimeMillis()<=4320000000L){
                 card.setStyle("-fx-background-color:#FFFAAA");
             }

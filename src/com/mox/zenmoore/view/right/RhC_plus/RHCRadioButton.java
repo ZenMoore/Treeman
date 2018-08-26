@@ -30,7 +30,8 @@ public class RHCRadioButton extends RadioButton implements Cloneable{
             case 5:this.setStyle("-fx-background-color: #FFC0CB;");break;
         }
 
-        setOnAction(e->{Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Are you sure it's finished?");
+        setOnAction(e->{
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Are you sure it's finished?");
             Optional<ButtonType> result = alert.showAndWait();
             if(result.isPresent() && result.get() == ButtonType.OK){
                 this.setText(Congratulations.RHCdeveloped);

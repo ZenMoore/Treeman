@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.web.HTMLEditor?>
 
-
-<AnchorPane fx:id="pane" prefHeight="597.0" prefWidth="584.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mox.zenmoore.controller.Controller_addpro">
+<AnchorPane fx:id="pane" prefHeight="597.0" prefWidth="584.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mox.zenmoore.controller.Controller_proinfor">
    <children>
       <HTMLEditor fx:id="htmltext" disable="false" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;The project content in details.&lt;/body&gt;&lt;/html&gt;" layoutX="11.0" layoutY="206.0" prefHeight="347.0" prefWidth="562.0" />
       <ChoiceBox fx:id="typebox" layoutX="433.0" layoutY="35.0" prefHeight="30.0" prefWidth="125.0" />
