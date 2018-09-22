@@ -4,9 +4,12 @@
 
 package com.mox.zenmoore.controller;
 
-import java.io.File;
+import java.io.*;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
+
+import com.mox.zenmoore.model.Congratulations;
 import com.mox.zenmoore.model.Directories;
 import com.mox.zenmoore.model.Task;
 import com.mox.zenmoore.view.Home;
@@ -110,6 +113,7 @@ public class Controller_home extends Controller{
         setSpringStyle();
         setDbtnStyle();
         loadTodays();
+        showIns();
     }
 
     private void loadTodays(){
@@ -137,6 +141,26 @@ public class Controller_home extends Controller{
         srp_tod.setContent(group);
     }
 
+
+    private void showIns(){
+        try{
+            DataInputStream inputStream = new DataInputStream(new FileInputStream("./true.show"));
+            if(inputStream.readBoolean()){
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setHeight(400);
+                alert.setContentText("You can click the right-hand button on the items to get the information in details.");
+                Optional<ButtonType> result = alert.showAndWait();
+                if(result.isPresent() && result.get() == ButtonType.OK){
+                    try(DataOutputStream outputStream = new DataOutputStream(new FileOutputStream("./true.show"))){
+                        outputStream.writeBoolean(false);
+                    }
+                }
+            }
+
+        }catch (Exception ex){
+            new Alert(Alert.AlertType.ERROR,ex.getMessage()).showAndWait();
+        }
+    }
     private Button buttonAdd(){
         Button button = new Button("...");
         button.setStyle("-fx-background-color: #A4D3EE; -fx-background-radius: 100px;");
