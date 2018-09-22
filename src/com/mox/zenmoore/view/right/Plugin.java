@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Plugin extends Stage {
@@ -15,6 +16,7 @@ public class Plugin extends Stage {
 
             this.setScene(scene);
             this.setTitle("Plugin");
+            this.getIcons().add(new Image("file:image/logo/logo.PNG"));
             this.setResizable(false);
             this.show();
         }catch (Exception ex ){
