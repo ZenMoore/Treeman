@@ -106,6 +106,9 @@ Like the software project? Don't hesitate to join us. We are looking for the fol
 > SourceForge: zenmoo<br> 
 > Facebook: Zens Moore<br>
 
+# Download
+Please click [Treeman sourceforge](https://treeman.sourceforge.io) to start the download.
+
 
 > [Treeman Github](https://github.com/ZenMoore/Treeman) |
 > [Treeman Coding](https://coding.net/u/ZenMoore/p/Treeman) |
